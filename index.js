@@ -6,8 +6,8 @@ var usersRoute = require('./server/modules/users/route');
 var productsRoute = require('./server/modules/products/route');
 var customerRoute = require('./server/modules/customers/route');
 
-//var connectioString = "mongodb://shahamitr:shahamitr@ds019471.mlab.com:19471/dashboard";
-var connectioString = "mongodb://localhost:27017/test";
+var connectioString = "mongodb://shahamitr:shahamitr@ds019471.mlab.com:19471/dashboard";
+//var connectioString = "mongodb://localhost:27017/test";
 
 mongoose.connect(connectioString, function(err){
 	console.log("DB Connected ");
