@@ -1,0 +1,19 @@
+{
+	"users": 
+	[
+		{
+			"_id": "571e0394fca0fd5e9f751c39",
+			"username": "amit",
+			"password": "amit",
+			"email": "amit.r.shah.2005@gmail.com",
+			"is_admin": true
+		},
+		{
+		    "_id": "571e03b5fca0fd5e9f751c43",
+			"username": "sudhir",
+			"password": "sudhir",
+			"email": "sudhir.nilekar@butterflyadvisory.com",
+			"is_admin": true
+		}
+	]
+}

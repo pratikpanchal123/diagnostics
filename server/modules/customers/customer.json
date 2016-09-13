@@ -1,0 +1,65 @@
+{
+	"channelActivity": [{
+		"orderHistory": [{
+			"Online": "3",
+			"Mobile": "4",
+			"Shop": "2"
+		}],
+		"dwell": [{
+			"Online": "3",
+			"Mobile": "4",
+			"Shop": "2"
+		}],
+		"sale": [{
+			"Online": "3",
+			"Mobile": "4",
+			"Shop": "2"
+		}],
+		"access": [{
+			"Online": "3",
+			"Mobile": "4",
+			"Shop": "2"
+		}]
+	}],
+	"products": [{
+		"id": 20004,
+		"buyDate": "2016-03-11T18:30:00.000Z",
+		"rating": "4.5 Stars",
+		"review": "Brilliant product but a bit difficult to assemble",
+		"tweet": "",
+		"sentiment": "+",
+		"SocialAction": [
+			"Facebook Like"
+		]
+	}],
+	"actions": [{
+		"recommendationCount": 4,
+		"orderCancellations": 1,
+		"complaints": 0
+	}],
+	"address": [{
+		"type": "Home",
+		"addressLocal": "212 B Preston House",
+		"city": "London",
+		"state": "Middlesex",
+		"postcode": "W2 4JB"
+	}, {
+		"type": "Home 2",
+		"addressLocal": "54 Prince street",
+		"city": "Milton Keynes",
+		"state": "Bucks",
+		"Postcode": "MK2 4JB"
+	}],
+	"profile": [{
+		"name": "JOHN doe",
+		"emailId": "j.d@jd.com",
+		"custId": "1234dsads",
+		"lastAccess": "2016-03-13T18:30:00.000Z",
+		"category": [
+			"Gold",
+			"Wines",
+			"Social++"
+		]
+	}],
+	"__v": 0
+}

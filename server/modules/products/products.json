@@ -1,0 +1,49 @@
+{
+	"products": 
+	[
+		{
+			"id": "20004",
+			"name": "Heavy Duty Blender",
+			"desc": "Heavy Duty Blender Description",
+			"catalog": "Kitchen Appliances",
+			"totalNoOfOrders": 340,
+			"avgPrice": "£65",
+			"maxPrice": "£98",
+			"minPrice": "£43",
+			"avgCost": "£35",
+			"reviewCount": 230,
+			"avgRating": 3.5,
+			"socialAction": {
+				"fb":325,
+				"twitter":300
+			},
+			"channel": [{
+				"online":210,
+				"mobile":40,
+				"shop": 50
+			}]
+		},
+		{
+			"id": "20005",
+			"name": "Heavy Duty Mixer",
+			"desc": "Heavy Duty Mixer Description",
+			"catalog": "Kitchen Appliances",
+			"totalNoOfOrders": 540,
+			"avgPrice": "£165",
+			"maxPrice": "£198",
+			"minPrice": "£143",
+			"avgCost": "£135",
+			"reviewCount": 1230,
+			"avgRating": 13.5,
+			"socialAction": {
+				"fb": 325,
+				"twitter": 300
+			},
+			"channel": [{
+				"online":210,
+				"mobile":40,
+				"shop":50
+			}]
+		}
+	]
+}
