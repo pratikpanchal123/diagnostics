@@ -1,14 +1,27 @@
-/*
-	Route file exposes all the routes for particular module, in this case it exposes get, delete, post and put routes for getting data, delete data, creating data and updating data to database respectively.
-*/
-var express 	= require("express");
-var userModel 	= require("./usersModel");
-var routes 		= express.Router();
+var express = require('express');
+var bodyParser = require('body-parser');
+var UsersModel = require('./usersModel');
 
-routes.get("/users", function(req, res) {
-	userModel.find(req, function(response){
-		res.json(response);
-	});
+app = express();
+var router = express.Router();// get an instance of the express Router
+
+router.post('/users',function(req, res) {
+    UsersModel.save(req,function(response){
+        res.json(response);      
+    });
 });
 
-module.exports = routes;
+router.get('/users',function(req, res) {
+   UsersModel.find(req,function(response){
+        res.json(response);
+   });
+});
+
+router.post('/validate',function(req, res) {
+    UsersModel.validateUser(req,function(response){
+        res.json(response);
+    })
+});
+
+
+module.exports = router;

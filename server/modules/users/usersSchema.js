@@ -1,13 +1,11 @@
-/*
-    This file declares the user schema and make it available to mongoose.
-*/
-// get an instance of mongoose and mongoose.Schema
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose     = require('mongoose');
+var Schema       = mongoose.Schema;
 
-// set up a mongoose model and pass it using module.exports
-module.exports = mongoose.model('User', new Schema({ 
-    username: String, 
-    password: String, 
-    admin: Boolean 
-}));
+var UserSchema   = new Schema({
+    firstName: String,
+    lastName: String,
+    username: String,
+    password: String
+});
+
+module.exports = mongoose.model('User', UserSchema);
