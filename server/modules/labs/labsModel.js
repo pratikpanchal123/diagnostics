@@ -1,27 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var User = require('./usersSchema');
+var Labs = require('./labsSchema');
 app = express();
 var router = express.Router();              // get an instance of the express Router
 
 //  add new customer
 function Save(req,callback){
-      var user = new User();
-		console.log(req.body);
-        user.firstName = req.body.firstName;
-        user.lastName = req.body.lastName;
-        user.birthDate = req.body.birthDate;
-        user.address1 = req.body.address1;
-        user.address2 = req.body.address2;
-        user.city = req.body.city;
-        user.state = req.body.state;
-        user.zipCode = req.body.zipCode;
-        user.country = req.body.country;
-        user.mobile = req.body.mobile;
-        user.password = req.body.password;
-        user.aadharNumber = req.body.aadharNumber;
-                // save the bear and check for errors
-        user.save(function(err) {
+      var labs = new Labs();
+	labs.firstName = req.body.firstName;
+    labs.lastName = req.body.lastName;
+    labs.address = req.body.address;
+    labs.speciality = req.body.speciality;
+        labs.save(function(err) {
             if (err){
                  response = {
                     success:false,
@@ -31,7 +21,7 @@ function Save(req,callback){
             }else{
                 var  response = {
                     success:true,
-                    message:'User Added Successfully!',
+                    message:'New Labs added successfully!',
                     code:200    
                 };
             }
