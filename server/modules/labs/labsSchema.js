@@ -2,11 +2,11 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var LabsSchema   = new Schema({
-    firstName: String,
-    lastName: String,
-    address:String,
-    speciality:String,
+    name: String,
+    address: String,
+    city:String,
+    state:String,
     createdDate:{ type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Labs', LabsSchema);

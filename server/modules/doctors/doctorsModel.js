@@ -1,17 +1,20 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var Labs = require('./labsSchema');
+var Doctors = require('./doctorsSchema');
 app = express();
 var router = express.Router();              // get an instance of the express Router
 
 //  add new customer
 function Save(req,callback){
-      var labs = new Labs();
-	labs.name = req.body.name;
-    labs.address = req.body.address;
-    labs.city = req.body.city;
-    labs.state = req.body.state;
-        labs.save(function(err) {
+      var doctors = new Doctors();
+    doctors.firstName = req.body.firstName;
+    doctors.lastName = req.body.lastName;
+    doctors.address = req.body.address;
+    doctors.speciality = req.body.speciality;
+    doctors.city = req.body.city;
+    doctors.state = req.body.state;
+
+    doctors.save(function(err) {
             if (err){
                  response = {
                     success:false,
@@ -21,7 +24,7 @@ function Save(req,callback){
             }else{
                 var  response = {
                     success:true,
-                    message:'New Labs added successfully!',
+                    message:'New Doctors added successfully!',
                     code:200    
                 };
             }
@@ -32,7 +35,7 @@ function Save(req,callback){
 
 //  find all customers
 function Find(req,callback){
-    Labs.find(function(err, users) {
+    Doctors.find(function(err, users) {
             if (err){
                 response = {
                     success:false,

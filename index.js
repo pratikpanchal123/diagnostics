@@ -3,10 +3,10 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 var usersRoute = require('./server/modules/users/route');
-var productsRoute = require('./server/modules/products/route');
-var customerRoute = require('./server/modules/customers/route');
+var doctorsRoute = require('./server/modules/doctors/route');
+var labsRoute = require('./server/modules/labs/route');
 
-var connectioString = "mongodb://pratikpanchal:pratik@ds033076.mlab.com:33076/diagnostic";
+var connectioString = "mongodb://localhost/diagnostic";
 
 mongoose.connect(connectioString, function(err){
 	console.log("DB Connected ");
@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api", usersRoute);
-app.use("/api", productsRoute);
-app.use("/api", customerRoute);
+app.use("/api",doctorsRoute);
+app.use("/api",labsRoute);
 
 app.use(express.static(__dirname));
 
