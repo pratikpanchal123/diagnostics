@@ -1,92 +1,65 @@
-'use strict';
+(function() {
+    'use strict';
+    // Route for Header module
+    function routeProvider ($stateProvider) {
+        $stateProvider.state('index', {
+            abstract: true,
+            url: ''
+        })
+        .state('index.home',{
+            url:"/home",
+            views:{
+                'main@':{
+                    templateUrl: 'scripts/module/home/home.template.html'
+                },
+                'header@index.home':{
+                    templateUrl:'scripts/module/home/header/header.template.html',
+                    controller: 'home.header.controller',
+                    controllerAs:'home'
+                },
+                'content@index.home':{
+                    templateUrl:'scripts/module/home/content/content.template.html',
+                    controller: 'home.content.controller',
+                    controllerAs:'home'
+                },
+                'footer@index.home':{
+                    templateUrl:'scripts/module/home/footer/footer.template.html',
+                    controller: 'home.footer.controller',
+                    controllerAs:'home'
+                }
+            }
+        });
 
-/**
- * @ngdoc overview
- * @name yapp
- * @description
- * # yapp
- *
- * Main module of the application.
- */
- angular
- .module('yapp', [
-    'ui.router',
-    'snap',
-    'ngAnimate'
-    ])
- .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
+    }
 
-    $urlRouterProvider.when('/dashboard', '/dashboard/overview');
-    $urlRouterProvider.otherwise('/login');
+    routeProvider.$inject = ['$stateProvider'];
 
-    $stateProvider
-    .state('base', {
-        abstract: true,
-        url: '',
-        templateUrl: 'views/base.html'
-    })
-    .state('login', {
-      url: '/login',
-      parent: 'base',
-      templateUrl: 'views/login.html',
-      controller: 'LoginCtrl'
-  })
-    .state('dashboard', {
-      url: '/dashboard',
-      parent: 'base',
-      templateUrl: 'views/dashboard.html',
-      controller: 'DashboardCtrl'
-  })
-    .state('overview', {
-        url: '/overview',
-        parent: 'dashboard',
-        templateUrl: 'views/dashboard/overview.html'
-    })
-    .state('reports', {
-        url: '/reports',
-        parent: 'dashboard',
-        templateUrl: 'views/dashboard/reports.html'
-    })
-	.state('products', {
-        url: '/products',
-        parent: 'dashboard',
-		templateUrl: 'views/dashboard/products.html',
-		controller: 'ProductCtrl'
-    })
-	.state('customers', {
-        url: '/customers',
-        parent: 'dashboard',
-		templateUrl: 'views/dashboard/customers.html',
-		controller: 'CustomerCtrl'
-    })
-	.state('customerdetail',
-            {
-                url: "/customerdetail/{customerID}",
-				 parent: 'dashboard',
-                controller: 'CustomerCtrl',
-                templateUrl: 'views/dashboard/customers-detail.html'
-            })
-	.state('product-detail',
-	{
-		url: "/product-detail/{productId}",
-		 parent: 'dashboard',
-		controller: 'ProductCtrl',
-		templateUrl: 'views/dashboard/products-detail.html'
-	});
+    angular.module('app.pLabs',['app.pLabs.content','app.pLabs.header','app.pLabs.footer','ui.router']).config(routeProvider)
+        .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {
 
-}]).run(["$rootScope", "$location", "loginService", "snapRemote", function($rootScope, $location, loginService, snapRemote){
-		$rootScope.$on("$stateChangeStart", function(){
-			if(loginService.isAuthenticated() === false) {
-				$location.path("/login");
-			} else {
-				if($location.$$path === "/" || $location.$$path === "/login") {
-					$location.path("/dashboard");
-				} else {
-					$location.path($location.$$path);
-				}
-			}
-		});
-		$rootScope.$on("$locationChangeSuccess", function(){
-			snapRemote.open("left");
-		});
-	}]);
+            $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+
+               console.log(toState);
+            });
+            $rootScope.$on('$stateNotFound', function (event, toState, toParams, fromState, fromParams, options) {
+
+                console.log(toState);
+            });
+            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, options) {
+
+                console.log(toState);
+            });
+            $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, options) {
+
+                console.log(toState);
+            });
+
+
+
+        }]);
+
+})();
+
+
+
+
