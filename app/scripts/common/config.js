@@ -5,8 +5,8 @@
 		{
 			api:'api',
 			get SERVER_ADDRESS(){
-				return  'http://localhost:5000/'+this.api;
-				//return 'https://diagnostics123.herokuapp.com/'+this.api;
+				//return  'http://localhost:5000/'+this.api;
+				return 'https://diagnostics123.herokuapp.com/'+this.api;
 			},
 		}).constant('apiUrl',{
 		doctors:{
