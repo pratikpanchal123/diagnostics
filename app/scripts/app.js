@@ -1,7 +1,8 @@
 (function() {
     'use strict';
     // Route for Header module
-    function routeProvider ($stateProvider) {
+    function routeProvider ($stateProvider,$urlRouterProvider) {
+        $urlRouterProvider.otherwise('/home');
         $stateProvider.state('index', {
             abstract: true,
             url: ''
@@ -32,30 +33,18 @@
 
     }
 
-    routeProvider.$inject = ['$stateProvider'];
+    routeProvider.$inject = ['$stateProvider','$urlRouterProvider'];
 
-    angular.module('app.pLabs',['app.pLabs.content','app.pLabs.header','app.pLabs.footer','ui.router']).config(routeProvider)
+    angular.module('app.pLabs',[
+        'app.pLabs.content',
+        'app.pLabs.header',
+        'app.pLabs.footer',
+        'ui.router',
+        'app.pLabs.server',
+        'app.pLabs.constant'
+    ])
+        .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {
-
-            $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
-
-               console.log(toState);
-            });
-            $rootScope.$on('$stateNotFound', function (event, toState, toParams, fromState, fromParams, options) {
-
-                console.log(toState);
-            });
-            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, options) {
-
-                console.log(toState);
-            });
-            $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, options) {
-
-                console.log(toState);
-            });
-
-
-
         }]);
 
 })();
