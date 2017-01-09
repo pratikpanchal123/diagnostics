@@ -17,4 +17,20 @@ router.get('/labs',function(req, res) {
    });
 });
 
+router.get('/labs/:q',function(req, res) {
+	var q = req.params.q;
+    LabsModel.findByFields(
+	{
+		$or:[
+			{"name":new RegExp(q, 'i')},
+			{"address":new RegExp(q, 'i')},
+			{"city":new RegExp(q, 'i')},
+			{"state":new RegExp(q, 'i')}
+		]
+		},function(response){
+        res.json(response);
+   });
+});
+
+
 module.exports = router;

@@ -17,4 +17,27 @@ router.get('/doctors',function(req, res) {
    });
 });
 
+router.get("/doctors/:q", function(req, res) {
+	var q = req.params.q;
+	// DoctorsModel.findByFields({"state":q}, function(response){
+		// res.json(response);
+	// });
+	DoctorsModel.findByFields(
+	{
+		$or:[
+			{"firstName":new RegExp(q, 'i')},
+			{"lastName":new RegExp(q, 'i')},
+			{"speciality":new RegExp(q, 'i')},
+			{"address":new RegExp(q, 'i')},
+			{"city":new RegExp(q, 'i')},
+			{"state":new RegExp(q, 'i')}
+		]
+		},function(response){
+        res.json(response);
+   });
+	
+	
+	
+});
+
 module.exports = router;

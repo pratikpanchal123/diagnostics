@@ -53,5 +53,29 @@ function Find(req,callback){
         });
 }
 
+//  find all customers
+function FindByFields(req,callback){
+    Doctors.find(req,function(err, users) {
+            if (err){
+                response = {
+                    success:false,
+                    message:err,
+                    code:400
+                };
+            }else{
+                response = {
+                    success:true,
+                    data:users,
+                    code:200
+                };
+            }
+            callback(response);
+        });
+}
+
+
+
+
 exports.save = Save;
 exports.find = Find;
+exports.findByFields = FindByFields;
