@@ -4,6 +4,9 @@
 	function homeController (contentFactory) {
 		var _this = this;
 		function init() {
+			_this.doctorsCat = ["Dentist","Gynecologist","Orthopedist","Pediatrician","Ophthalmologist","Dermatologist","Physiotherapist","Infertility","Specialist","Psychiatrist","Cardiologist","Urologist","Dietitian","Neurologist","Pulmonologist","Gastroenterologist","Neurosurgeon","Bariatric","Surgeon","Rheumatologist"];
+
+			_this.labsCat = ["Widal test","Erythrocyte sedimentation rate(esr)","Vitamin b12","Vdrl","Mantoux test","Pregnancy test","urine",  "Hepatitis profile","Ct scan"];
 			contentFactory.getDoctors().then(function (response) {
 				console.log(response);
 			},function (error) {
