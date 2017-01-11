@@ -41,7 +41,7 @@ p, figure {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #484c50;
+  color: #fff;
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 30px 0;
@@ -225,11 +225,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: #efefef url(../images/white_wave.png) repeat;
+  
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   body {
-    background: #efefef url(../images/white_wave_@2X.png) repeat;
+    
   }
 }
 
@@ -302,8 +302,10 @@ body {
 }
 @media screen and (max-width: 768px) {
   #fh5co-header nav ul {
-    display: none;
+    display: block;
   }
+  .inpg{
+	margin-top:60px}
 }
 #fh5co-header nav ul li {
   display: inline;
@@ -363,6 +365,13 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
   #fh5co-hero {
     height: 375px;
   }
+  .lzi {
+    z-index: 100;
+    position: relative;
+    top: 58px;
+}
+.inpg{
+	margin-top:60px}
 }
 #fh5co-hero .fh5co-overlay {
   position: absolute;
@@ -1238,7 +1247,7 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
   z-index: 1;
   top: 0;
   width: 275px;
-  background: black;
+ /* background: black;*/
   padding: 30px;
 }
 @media screen and (max-width: 768px) {
@@ -1370,8 +1379,8 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
 		margin-top:100px;}
 	
   .fh5co-nav-toggle {
-    display: block;
-    top: 20px;
+    display: none;
+    
   }
 }
 
@@ -1591,7 +1600,7 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
 		
 .tab-content{
 	padding: 15px;
-    background: #eaebeb;
+    background: #f8f8f8;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
