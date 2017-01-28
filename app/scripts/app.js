@@ -29,7 +29,31 @@
                     controllerAs:'home'
                 }
             }
+        })
+            .state('index.home.search',{
+            url:"/search",
+            views:{
+                'main@':{
+                    templateUrl: 'scripts/module/home/home.template.html'
+                },
+                'header@index.home.search':{
+                    templateUrl:'scripts/module/home/header/header.template.html',
+                    controller: 'home.header.controller',
+                    controllerAs:'home'
+                },
+                'content@index.home.search':{
+                    templateUrl:'scripts/module/home/search/search.template.html',
+                    controller: 'home.content.controller',
+                    controllerAs:'home'
+                },
+                'footer@index.home.search':{
+                    templateUrl:'scripts/module/home/footer/footer.template.html',
+                    controller: 'home.footer.controller',
+                    controllerAs:'home'
+                }
+            }
         });
+
 
     }
 
@@ -37,6 +61,7 @@
 
     angular.module('app.pLabs',[
         'app.pLabs.content',
+        'app.pLabs.search',
         'app.pLabs.header',
         'app.pLabs.footer',
         'ui.router',

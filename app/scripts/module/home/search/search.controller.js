@@ -22,7 +22,7 @@
 		init();
 	}
 
-	homeController.$inject = ['content.factory'];
-	angular.module('app.pLabs.content',[]).controller('home.content.controller',homeController);
+	homeController.$inject = ['search.factory'];
+	angular.module('app.pLabs.search',[]).controller('home.search.controller',homeController);
 })();
 
