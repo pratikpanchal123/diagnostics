@@ -6,11 +6,28 @@ var router = express.Router();              // get an instance of the express Ro
 
 //  add new customer
 function Save(req,callback){
-      var labs = new Labs();
-	labs.name = req.body.name;
-    labs.address = req.body.address;
+    var labs = new Labs();
+    labs.name = req.body.name;
+    labs.address1 = req.body.address1;
+    labs.address2 = req.body.address2;
     labs.city = req.body.city;
     labs.state = req.body.state;
+    labs.zipCode = req.body.zipCode;
+    labs.serviceId = req.body.serviceId;
+    labs.labLogo = req.body.labLogo;
+    labs.achievements = req.body.achievements;
+    labs.customerCareNumber = req.body.customerCareNumber;
+    labs.labDescription = req.body.labDescription;
+    labs.emailId = req.body.emailId;
+    labs.country = req.body.country;
+    labs.contactPersonName = req.body.contactPersonName;
+    labs.username = req.body.username;
+    labs.password = req.body.password;
+    labs.termscondition = req.body.termscondition;
+    labs.rating = req.body.rating;
+    labs.labWorkingTime = req.body.labWorkingTime;
+    labs.time = req.body.time;
+
         labs.save(function(err) {
             if (err){
                  response = {
