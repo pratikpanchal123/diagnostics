@@ -21,7 +21,7 @@ var LabsSchema   = new Schema({
 	termscondition: String,
 	rating: String,
 	labWorkingTime: String,
-	time: String
+	time: String,
 	createdDate:{ type: Date, default: Date.now }
 	});
 
