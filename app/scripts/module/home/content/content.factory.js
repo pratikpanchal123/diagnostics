@@ -17,10 +17,25 @@
 			return serverApi.getData(getLabsUrl,true);
 		}
 
+        // Get categories list
+        function getDoctorsCategories() {
+            var getCategoriesUrl;
+            getCategoriesUrl = constantData.SERVER_ADDRESS + apiUrl.categories.CATEGORIES + '/doc';
+            return serverApi.getData(getCategoriesUrl,true);
+        }
 
-		return {
+        // Get Labs categories list
+        function getLabsCategories() {
+            var getLabsCategoriesUrl;
+            getLabsCategoriesUrl = constantData.SERVER_ADDRESS + apiUrl.categories.CATEGORIES + '/lab';
+            return serverApi.getData(getLabsCategoriesUrl,true);
+        }
+
+        return {
 			getDoctors:getDoctors,
-			getLabs:getLabs
+			getLabs:getLabs,
+            getDoctorsCategories:getDoctorsCategories,
+            getLabsCategories:getLabsCategories
 		};
 
 	}

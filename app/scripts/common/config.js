@@ -18,7 +18,12 @@
 			get LABS(){
 				return '/labs'
 			}
-		}
+		},
+        categories:{
+            get CATEGORIES(){
+                return '/categories'
+            }
+        }
 	});
 })();
 

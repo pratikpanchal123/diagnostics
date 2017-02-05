@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var usersRoute = require('./server/modules/users/route');
 var doctorsRoute = require('./server/modules/doctors/route');
 var labsRoute = require('./server/modules/labs/route');
+var categoriesRoute = require('./server/modules/categories/route');
 
 //var connectioString = "mongodb://localhost/diagnostic";
 var connectioString = "mongodb://pratikpanchal:pratik@ds033076.mlab.com:33076/diagnostic";
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use("/api", usersRoute);
 app.use("/api",doctorsRoute);
 app.use("/api",labsRoute);
+app.use("/api",categoriesRoute);
 
 app.use(express.static(__dirname));
 
