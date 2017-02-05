@@ -10,42 +10,38 @@
 			_this.labsCat = ["Widal test","Erythrocyte sedimentation rate(esr)","Vitamin b12","Vdrl","Mantoux test","Pregnancy test","urine",  "Hepatitis profile","Ct scan"];
 
             contentFactory.getDoctorsCategories().then(function (response) {
-                _this.doctorsCat = response.data;
-                console.log(_this.doctorsCat);
+				if(response.data.length > 0){
+                    _this.doctorsCat = response.data;
+				}
             },function (error) {
             });
 
             contentFactory.getLabsCategories().then(function (response) {
-                _this.labsCat  = response.data;
-                console.log(_this.labsCat);
+                if(response.data.length > 0) {
+                    _this.labsCat = response.data;
+                }
             },function (error) {
                 console.log(error);
             });
-
-			contentFactory.getDoctors().then(function (response) {
-				console.log(response);
-			},function (error) {
-				console.log(error);
-			});
-			contentFactory.getLabs().then(function (response) {
-				console.log(response);
-			},function (error) {
-				console.log(error);
-			})
-
 		}
 
 		function search(){
-            contentFactory.getDoctors().then(function (response) {
-                console.log(response);
-            },function (error) {
-                console.log(error);
-            });
-            contentFactory.getLabs().then(function (response) {
-                console.log(response);
-            },function (error) {
-                console.log(error);
-            });
+			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
+				var city = _this.location.address_components[0].long_name;
+                contentFactory.getDoctors().then(function (response) {
+                    console.log(response);
+                },function (error) {
+                    console.log(error);
+                });
+
+                contentFactory.getLabs().then(function (response) {
+                    console.log(response);
+                },function (error) {
+                    console.log(error);
+                });
+            } else {
+                _this.isValidLocation = false;
+            }
 		}
 
 		init();

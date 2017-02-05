@@ -1,6 +1,6 @@
-<section id="fh5co-hero" >
-    <!--<div class="fh5co-overlay"></div>
-    <div class="fh5co-overlay2"></div>-->
+<!--<section id="fh5co-hero" >
+    &lt;!&ndash;<div class="fh5co-overlay"></div>
+    <div class="fh5co-overlay2"></div>&ndash;&gt;
     <div class="container" >
         <div class="fh5co-intro " >
             <div class="fh5co-intro-text">
@@ -19,11 +19,11 @@
                                     <form action="#" method="post" class="animate-box fadeInUp animated">
                                         <span class="dicn"><img src="images/ssearch.png"></span>
                                         <input type="text" class="form-control" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" id="find" name="find">
+                                    </form>
                                 </div>
                                 <div  class="col-lg-2">
                                     <input type="submit" value="Search" class="btn btn-primary" ng-click="home.search()">
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 <section id="fh5co-projects">
     <div class="container">
         <div class="row">
@@ -50,7 +50,7 @@
                             <div class="container">
                                 <div class="row ">
                                     <div class=" center-block">
-                                        <div ui-sref = "index.home.search" ng-repeat="doc in home.doctorsCat" class="col-lg-3 col-md-4 col-sm-6 et"><a href="#" ><img width="82px" height="82px" ng-src="images/{{doc.image}}"> <br>
+                                        <div ng-repeat="doc in home.doctorsCat" class="col-lg-3 col-md-4 col-sm-6 et"><a ui-sref = "index.home.search"  ><img width="82px" height="82px" ng-src="images/{{doc.image}}"> <br>
                                             {{doc.name}}</a> </div>
                                         <!--<div class="col-lg-3 col-md-4 col-sm-6 et"><a href="#" ><img src="images/p2.png"> <br>
                                             Loream Ipuse</a> </div>

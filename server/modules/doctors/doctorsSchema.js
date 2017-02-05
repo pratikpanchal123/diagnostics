@@ -8,6 +8,10 @@ var DoctorsSchema   = new Schema({
     speciality:String,
     city:String,
     state:String,
+	pic:String,
+	phone:String,
+	mobile:String,
+	email:String,
     createdDate:{ type: Date, default: Date.now },
 });
 
