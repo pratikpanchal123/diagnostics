@@ -66,7 +66,8 @@
         'app.pLabs.footer',
         'ui.router',
         'app.pLabs.server',
-        'app.pLabs.constant'
+        'app.pLabs.constant',
+		'google.places'
     ])
         .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {
