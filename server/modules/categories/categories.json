@@ -1,0 +1,162 @@
+{
+	"categories_id": "1",
+	"name": "Dentist",
+	"desc": "",
+	"status": 1,
+	"image": "Dentist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "2",
+	"name": "Gynecologist",
+	"desc": "",
+	"status": 1,
+	"image": "Gastroenterologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "3",
+	"name": "Orthopedist",
+	"desc": "",
+	"status": 1,
+	"image": "Orthopedist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "4",
+	"name": "Pediatrician",
+	"desc": "",
+	"status": 1,
+	"image": "Pediatrician.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "5",
+	"name": "Ophthalmologist",
+	"desc": "",
+	"status": 1,
+	"image": "Ophthalmologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "6",
+	"name": "Dermatologist",
+	"desc": "",
+	"status": 1,
+	"image": "Dermatologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "7",
+	"name": "Physiotherapist",
+	"desc": "",
+	"status": 1,
+	"image": "Physiotherapist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "8",
+	"name": "Infertility",
+	"desc": "",
+	"status": 1,
+	"image": "Infertility.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "9",
+	"name": "Psychiatrist",
+	"desc": "",
+	"status": 1,
+	"image": "Psychiatrist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "10",
+	"name": "Cardiologist",
+	"desc": "",
+	"status": 1,
+	"image": "Cardiologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "11",
+	"name": "Urologist",
+	"desc": "",
+	"status": 1,
+	"image": "Urologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "12",
+	"name": "Dietitian",
+	"desc": "",
+	"status": 1,
+	"image": "Dietitian.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "13",
+	"name": "Neurologist",
+	"desc": "",
+	"status": 1,
+	"image": "Neurologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "14",
+	"name": "Pulmonologist",
+	"desc": "",
+	"status": 1,
+	"image": "Pulmonologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "15",
+	"name": "Gastroenterologist",
+	"desc": "",
+	"status": 1,
+	"image": "Gastroenterologist.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "16",
+	"name": "Neurosurgeon",
+	"desc": "",
+	"status": 1,
+	"image": "Neurosurgeon.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "17",
+	"name": "Bariatric",
+	"desc": "",
+	"status": 1,
+	"image": "Bariatric.png",
+	"type": 'doc'
+	
+}
+{
+	"categories_id": "18",
+	"name": "Rheumatologist",
+	"desc": "",
+	"status": 1,
+	"image": "Rheumatologist.png",
+	"type": 'doc'
+	
+}
