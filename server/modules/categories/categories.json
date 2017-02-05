@@ -4,7 +4,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Dentist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -13,7 +13,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Gastroenterologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -22,7 +22,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Orthopedist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -31,7 +31,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Pediatrician.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -40,7 +40,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Ophthalmologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -49,7 +49,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Dermatologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -58,7 +58,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Physiotherapist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -67,7 +67,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Infertility.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -76,7 +76,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Psychiatrist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -85,7 +85,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Cardiologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -94,7 +94,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Urologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -103,7 +103,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Dietitian.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -112,7 +112,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Neurologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -121,7 +121,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Pulmonologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -130,7 +130,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Gastroenterologist.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -139,7 +139,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Neurosurgeon.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -148,7 +148,7 @@
 	"desc": "",
 	"status": 1,
 	"image": "Bariatric.png",
-	"type": 'doc'
+	"type": "doc"
 	
 }
 {
@@ -157,6 +157,87 @@
 	"desc": "",
 	"status": 1,
 	"image": "Rheumatologist.png",
-	"type": 'doc'
+	"type": "doc"
+	
+}
+{
+	"categories_id": "19",
+	"name": "Widal test",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "20",
+	"name": "Erythrocyte sedimentation rate(esr)",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "21",
+	"name": "Vitamin b12",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "22",
+	"name": "Vdrl",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "23",
+	"name": "Mantoux test",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "24",
+	"name": "Pregnancy test",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "25",
+	"name": "Urine",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "26",
+	"name": "Hepatitis profile",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
+	
+}
+{
+	"categories_id": "27",
+	"name": "Ct scan",
+	"desc": "",
+	"status": 1,
+	"image": "p6.png",
+	"type": "lab"
 	
 }
