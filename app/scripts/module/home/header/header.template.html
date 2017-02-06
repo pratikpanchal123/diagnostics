@@ -112,7 +112,7 @@
                         <div class="col-lg-4">
                             <form action="#" method="post" class="animate-box fadeInUp animated">
                                 <span class="licn"><img src="images/map.png"></span>
-                                <input type="text" class="form-control" placeholder="Location" g-places-autocomplete id="location" ng-model="home.location">
+                                <input ng-class="{'invalid':home.isValidLocation==false}" type="text" class="form-control" placeholder="Location" g-places-autocomplete id="location" ng-model="home.location">
                             </form>
                         </div>
                         <div class="col-lg-8">

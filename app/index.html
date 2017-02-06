@@ -26,6 +26,15 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="../bower_components/angular-google-places-autocomplete/src/autocomplete.css">
 
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui.css">
+    <link href="styles/style1.css" rel="stylesheet" type="text/css" media="all" />
+
+    <style>
+        .categories input[type="checkbox"]{
+            opacity:0
+        }
+    </style>
+
 
     <!-- Modernizr JS -->
   <script src="js/modernizr-2.6.2.min.js"></script>
@@ -86,5 +95,24 @@
     </script>
 	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAVacf56SoB8KODOjqkmYqPOSOz-As52go"></script>
 	<script src="../bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+    <script type='text/javascript'>//<![CDATA[
+    $(window).load(function(){
+        $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 9000,
+            values: [ 100, 7000 ],
+            slide: function( event, ui ) {  $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+            }
+        });
+        $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) + "- " + $( "#slider-range" ).slider( "values", 1 ) );
+
+    });//]]>
+
+    </script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+
+
 </body>
 </html>

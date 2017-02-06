@@ -25,28 +25,9 @@
             });
 		}
 
-		function search(){
-			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
-				var city = _this.location.address_components[0].long_name;
-                contentFactory.getDoctors().then(function (response) {
-                    console.log(response);
-                },function (error) {
-                    console.log(error);
-                });
-
-                contentFactory.getLabs().then(function (response) {
-                    console.log(response);
-                },function (error) {
-                    console.log(error);
-                });
-            } else {
-                _this.isValidLocation = false;
-            }
-		}
 
 		init();
 
-		_this.search = search;
 	}
 
 	homeController.$inject = ['content.factory'];
