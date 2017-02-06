@@ -5,6 +5,8 @@
 
 		var _this = this;
 
+        _this.view = 'list';
+
         function search(){
             if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
                 var city = "";
@@ -33,7 +35,18 @@
             }
         }
 
+        function listview(){
+        	_this.view = 'list';
+		}
+
+        function gridview(){
+            _this.view = 'grid';
+        }
+
+
         _this.search = search;
+        _this.listview = listview;
+        _this.gridview = gridview;
 
 
 
