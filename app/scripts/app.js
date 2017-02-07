@@ -15,7 +15,7 @@
                 },
                 'header@index.home':{
                     templateUrl:'scripts/module/home/header/header.template.html',
-                    controller: 'home.header.controller',
+                    controller: 'home.content.controller',
                     controllerAs:'home'
                 },
                 'content@index.home':{

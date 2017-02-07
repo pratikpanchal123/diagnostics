@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var usersRoute = require('./server/modules/users/route');
 var doctorsRoute = require('./server/modules/doctors/route');
@@ -15,6 +16,8 @@ mongoose.connect(connectioString, function(err){
 }); // connect to database
 
 var app = express();
+
+app.use(cors());
 
 app.set('port', (process.env.PORT || 5000));
 
