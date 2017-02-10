@@ -3,9 +3,13 @@
 
 	function homeController (contentFactory) {
 		var _this = this;
-		function init() {
+        _this.view = 'list';
 
-			_this.doctorsCat = ["Dentist","Gynecologist","Orthopedist","Pediatrician","Ophthalmologist","Dermatologist","Physiotherapist","Infertility","Psychiatrist","Cardiologist","Urologist","Dietitian","Neurologist","Pulmonologist","Gastroenterologist","Neurosurgeon","Bariatric","Rheumatologist"];
+        function init() {
+
+            _this.searchInitiated = false;
+
+            _this.doctorsCat = ["Dentist","Gynecologist","Orthopedist","Pediatrician","Ophthalmologist","Dermatologist","Physiotherapist","Infertility","Psychiatrist","Cardiologist","Urologist","Dietitian","Neurologist","Pulmonologist","Gastroenterologist","Neurosurgeon","Bariatric","Rheumatologist"];
 
 			_this.labsCat = ["Widal test","Erythrocyte sedimentation rate(esr)","Vitamin b12","Vdrl","Mantoux test","Pregnancy test","urine",  "Hepatitis profile","Ct scan"];
 
@@ -25,10 +29,12 @@
             });
 		}
 
+        init();
 
-		_this.view = 'list';
+
 
 		function search(){
+			_this.searchInitiated = true;
 			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
 				var city = "";
 				angular.forEach(_this.location.address_components, function(data){
@@ -49,8 +55,6 @@
 					console.log(error);
 				});
 
-				$state.go('index.home.search');
-
 			} else {
 				_this.isValidLocation = false;
 			}
@@ -70,7 +74,6 @@
 		_this.gridview = gridview;
 
 
-		init();
 
 	}
 

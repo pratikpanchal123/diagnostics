@@ -3,11 +3,10 @@
     // Route for Header module
     function routeProvider ($stateProvider,$urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
-        $stateProvider.state('index', {
+        $stateProvider.state('index',{
             abstract: true,
             url: ''
-        })
-        .state('index.home',{
+        }).state('index.home',{
             url:"/home",
             views:{
                 'main@':{
@@ -27,34 +26,18 @@
                     templateUrl:'scripts/module/home/footer/footer.template.html',
                     controller: 'home.footer.controller',
                     controllerAs:'home'
-                }
-            }
-        })
-            .state('index.home.search',{
-            url:"/search",
-            views:{
-                'main@':{
-                    templateUrl: 'scripts/module/home/home.template.html'
                 },
-                'header@index.home.search':{
-                    templateUrl:'scripts/module/home/header/header.template.html',
-                    controller: 'home.header.controller',
-                    controllerAs:'home'
+                'defaultView@index.home':{
+                    templateUrl:'scripts/module/home/content/default.template.html'
                 },
-                'content@index.home.search':{
-                    templateUrl:'scripts/module/home/search/search.template.html',
-                    controller: 'home.content.controller',
-                    controllerAs:'home'
+                'searchView@index.home':{
+                    templateUrl:'scripts/module/home/search/search.template.html'
                 },
-                'footer@index.home.search':{
-                    templateUrl:'scripts/module/home/footer/footer.template.html',
-                    controller: 'home.footer.controller',
-                    controllerAs:'home'
+                'search@index.home':{
+                    templateUrl:'scripts/module/home/content/search.template.html'
                 }
             }
         });
-
-
     }
 
     routeProvider.$inject = ['$stateProvider','$urlRouterProvider'];
