@@ -1650,3 +1650,22 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
 .margin {
   margin:4px 6px 16px -15px!important;
 }
+
+.loader {
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  top: 47%;
+  left: 47%;
+  z-index: 10000;
+  /*background-image: url("images/wheel.svg");*/
+  background: url("../images/Preloader_2.gif");
+  background-size: 48px;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: none;
+}

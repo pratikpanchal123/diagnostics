@@ -8,6 +8,7 @@
 				//return  'http://localhost:5000/'+this.api;
 				return 'https://diagnostics123.herokuapp.com/'+this.api;
 			},
+			loading: "<div class='loader'></div>"
 		}).constant('apiUrl',{
 		doctors:{
 			get DOCTORS(){

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	function homeController (contentFactory) {
+	function homeController (contentFactory, $loadingOverlay, constantData) {
 		var _this = this;
         _this.view = 'list';
 
@@ -31,26 +31,29 @@
 
         init();
 
-
-
 		function search(){
-			_this.searchInitiated = true;
 			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
-				var city = "";
+                _this.searchInitiated = true;
+
+                var city = "";
 				angular.forEach(_this.location.address_components, function(data){
 					if(data.types[0] == 'locality'){
 						city = data.long_name;
 					}
 				});
 
+                $loadingOverlay.show(constantData.loading);
 				contentFactory.getDoctors().then(function (response) {
 					console.log(response);
-				},function (error) {
+                    $loadingOverlay.hide();
+                },function (error) {
 					console.log(error);
 				});
 
+                $loadingOverlay.show(constantData.loading);
 				contentFactory.getLabs().then(function (response) {
 					console.log(response);
+                    $loadingOverlay.hide();
 				},function (error) {
 					console.log(error);
 				});
@@ -68,16 +71,12 @@
 			_this.view = 'grid';
 		}
 
-
 		_this.search = search;
 		_this.listview = listview;
 		_this.gridview = gridview;
-
-
-
 	}
 
-	homeController.$inject = ['content.factory'];
+	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData'];
 	angular.module('app.pLabs.content',[]).controller('home.content.controller',homeController);
 })();
 
