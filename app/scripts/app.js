@@ -54,6 +54,7 @@
         'app.pLabs.constant',
 		'google.places',
 		'ngLoadingOverlay',
+		'rzModule',
     ])
         .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {
