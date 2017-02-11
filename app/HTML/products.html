@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Pluse To Pluse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="shortcut icon" href="images/icn.png">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,600,400italic,700' rel='stylesheet' type='text/css'>
+<style>
+.categories input[type="checkbox"]{
+	opacity:0
+}
+</style>
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="css/flexslider.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="css/magnific-popup.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<!--new css-->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link href="css/style1.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/font-awesome.css" rel="stylesheet">
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+<!--header-->
+<div class="header">
+  <div class="header-top">
+    <div class="container">
+      <section id="fh5co-header">
+    <div class="container">
+      
+      <div class="pull-right right-menu lzi">
+         <span onclick="document.getElementById('id01').style.display='block'"  > 
+         <a href="#" class="lrlgn">LOGIN /REGISTER</a> </span> 
+          
+          <!-- The Modal -->
+          <div id="id01" class="modal"> <span onclick="document.getElementById('id01').style.display='none'" 
+class="close" title="Close Modal">&times;</span> 
+            
+            <!-- Modal Content -->
+            <div class="container">
+              <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info" >
+                  <div class="panel-heading">
+                    <div class="panel-title">Sign In</div>
+                    <div class="fptxt"> <a href="#">Forgot password?</a></div>
+                  </div>
+                  <div style="padding-top:30px" class="panel-body" >
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                    <form id="loginform" class="form-horizontal" role="form">
+                      <div style="margin-bottom: 25px" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+                      </div>
+                      <div style="margin-bottom: 25px" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                      </div>
+                      <div style="margin-top:10px" class="form-group"> 
+                        <!-- Button -->
+                        
+                        <div class="col-sm-12 controls"> <a id="btn-login" href="#" class="btn btn-success">Login </a> </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-12 control">
+                          <div class="sptxt" > Don't have an account! <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()"> Sign Up Here </a> </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="panel-title">Sign Up</div>
+                    <div class="snptxt"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                  </div>
+                  <div class="panel-body" >
+                    <form id="signupform" class="form-horizontal" role="form">
+                      <div id="signupalert" style="display:none" class="alert alert-danger">
+                        <p>Error:</p>
+                        <span></span> </div>
+                      <div class="form-group">
+                        <label for="firstname" class="col-md-3 control-label">Full Name</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" name="firstname" placeholder="Full Name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="lastname" class="col-md-3 control-label">Phone No</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" name="phone" placeholder="Phone No">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="col-md-3 control-label">Email</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" name="email" placeholder="Email Address">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="password" class="col-md-3 control-label">Password</label>
+                        <div class="col-md-9">
+                          <input type="password" class="form-control" name="passwd" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group"> 
+                        <!-- Button -->
+                        <div class="col-md-offset-3 col-md-9">
+                          <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          </div>
+       <nav role="navigation">
+        <h1 id="fh5co-logo"><a href="#"><img src="images/logo.png"></a><span> </span></h1>
+        <ul class="pull-right  ">
+          <li class="tmm"><a href="#">DIAGNOSTIC DAPS</a></li>
+      </ul></nav>
+      
+      <span  class="nline"></span> </div>
+  </section>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</div>
+<!--header--> 
+<!--banner-->
+<div class="banner1">
+
+   
+    <div class="container" >
+      <div class="fh5co-intro " >
+        <div class="fh5co-intro-text">
+          <div class="fh5co-left-position inpg">
+            <h2 class="animate-box">FIND AND BOOK</h2>
+            <div class="container tmlft">
+              <div class="col-lg-4">
+                <form action="#" method="post" class="animate-box fadeInUp animated">
+                  <span class="licn"><img src="images/map.png"></span>
+                  <input type="text" class="form-control" placeholder="Location" id="location" name="location">
+                </form>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+                  <div class="col-lg-6">
+                  <form action="#" method="post" class="animate-box fadeInUp animated">
+                    <span class="dicn"><img src="images/ssearch.png"></span>
+                    <input type="text" class="form-control" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" id="find" name="find">
+                    </div>
+                    <div  class="col-lg-2">
+                      <input type="submit" value="Search" class="btn btn-primary">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!--banner--> 
+<!--content-->
+<div class="content">
+<div class="products-agileinfo">
+
+<div class="container">
+
+<div class="product-agileinfo-grids w3l">
+
+<div class="col-md-3 product-agileinfo-grid">
+
+  <div class="categories">
+    <ul class="tree-list-pad">
+      <li>
+        <input type="checkbox" checked="checked" id="item-0" />
+        <label for="item-0"><span></span>Appointment</label>
+        <ul><li class="ttx"> <input  type="radio" value="">Instant Booking </li></ul>
+      </li>
+      
+      <li>
+        <input type="checkbox"  id="item-1" />
+        <label for="item-1"><span></span>Location</label>
+        <ul><li class="ttx"> <input  type="radio" value="">Loream Location </li>
+        <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+       <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+       <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+       <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+       <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+       <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+       <li class="ttx"> <input  type="radio" value="">Loream Location </li>
+        </ul>
+      </li>
+      <li>
+        <input type="checkbox"  id="item-2" />
+        <label for="item-2"><span></span>Availability</label>
+        <ul>
+        <li class="ttx"> <input  type="radio" value="">Any </li>
+        <li class="ttx"> <input  type="radio" value="">M.day </li>
+        <li class="ttx"> <input  type="radio" value="">T.day </li>
+        <li class="ttx"> <input  type="radio" value="">W.day </li>
+        <li class="ttx"> <input  type="radio" value="">T. day </li>
+        <li class="ttx"> <input  type="radio" value="">F. day </li>
+        <li class="ttx"> <input  type="radio" value="">S. day </li>
+        <li class="ttx"> <input  type="radio" value="">S. day </li>
+        
+        
+        </ul>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="price">
+    <h3>Price Range</h3>
+    <ul class="dropdown-menu6">
+      <li>
+        <div id="slider-range"></div>
+        <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+      </li>
+    </ul>
+  </div>
+  
+  
+  
+  <div class="brand-w3l">
+    <h3>Most Searched Localities</h3>
+    <ul>
+      <li><a href="#">Dermatologist in Andheri West</a></li>
+      <li><a href="#">Dermatologist in  West</a></li>
+      <li><a href="#">Dermatologist in Andheri West</a></li>
+      <li><a href="#">Dermatologist in Andheri </a></li>
+      <li><a href="#">Dermatologist in  West</a></li>
+      <li><a href="#">Andheri West</a></li>
+      <li><a href="#">Dermatologist in Andheri West</a></li>
+      
+    </ul>
+  </div>
+  <div class="cat-img"> <img class="img-responsive " src="images/ad.jpg" alt=""> </div>
+</div>
+<div class="col-md-9 product-agileinfon-grid1 w3l">
+
+<div class="mens-toolbar">
+  <p>Ophthalmologist in City name</p>
+  <p class="showing">Sorting By
+    <select>
+      <option value=""> Name</option>
+      <option value=""> Rate</option>
+      <option value=""> Exp. </option>
+      <option value=""> Price </option>
+    </select>
+  </p>
+  <div class="clearfix"></div>
+</div>
+<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+<ul id="myTab" class="nav1 nav1-tabs left-tab" role="tablist">
+<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+  <li role="presentation" > <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><img src="images/menu1.png"></a></li>
+  <li role="presentation" class="active"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile"><img src="images/menu.png"></a></li>
+</ul>
+<div id="myTabContent" class="tab-content"> 
+  
+  <!-- Hide panel-->
+  
+  <div role="tabpanel" class="tab-pane fade" id="home" aria-labelledby="home-tab">
+    <div class="product-tab">
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry</span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+        </div>
+      </div>
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+        </div>
+      </div>
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+           <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="product-tab prod1">
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+        </div>
+      </div>
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a></div>
+        </div>
+      </div>
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+           <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="product-tab">
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a></div>
+        </div>
+      </div>
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+        </div>
+      </div>
+      <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+          <div class="block">
+            <div class="starbox small ghosting"> </div>
+          </div>
+          <div class="women">
+            <h6><a href="#">Loream Name Here</a></h6>
+            <span class="size">BDS MDS - Conservative Dentistry </span>
+          
+            <a href="#" data-text="View More" class="my-cart-b item_add">View More</a></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  <!-- active panel-->
+  
+  <div role="tabpanel" class="tab-pane fade in active"  id="profile" aria-labelledby="profile-tab">
+    <div class="product-tab1">
+      <div class="col-md-4 product-tab1-grid">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
+        <div class="block">
+          <div class="starbox small ghosting"> </div>
+        </div>
+        <div class="women">
+          <h6><a href="#">Loream Name Here</a></h6>
+          <span class="size">BDS MDS - Conservative Dentistry </span>
+          16 years experience<br>
+Smile Essentials  and 1 more clinic
+<p>
+<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
+<br>
+<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
+<br>
+ <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
+      
+</p>
+
+         
+          <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    <div class="product-tab1 prod3">
+      <div class="col-md-4 product-tab1-grid">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
+        <div class="block">
+          <div class="starbox small ghosting"> </div>
+        </div>
+        <div class="women">
+          <h6><a href="#">Loream Name Here</a></h6>
+          <span class="size">BDS MDS - Conservative Dentistry </span>
+          16 years experience<br>
+Smile Essentials  and 1 more clinic
+<p>
+<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
+<br>
+<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
+<br>
+ <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
+      
+</p>
+
+         
+          <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    
+    
+    <div class="product-tab1">
+      <div class="col-md-4 product-tab1-grid">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
+        <div class="block">
+          <div class="starbox small ghosting"> </div>
+        </div>
+        <div class="women">
+          <h6><a href="#">Loream Name Here</a></h6>
+          <span class="size">BDS MDS - Conservative Dentistry </span>
+          16 years experience<br>
+Smile Essentials  and 1 more clinic
+<p>
+<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
+<br>
+<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
+<br>
+ <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
+      
+</p>
+
+         
+          <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    
+    <div class="product-tab1 prod3">
+      <div class="col-md-4 product-tab1-grid">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
+        <div class="block">
+          <div class="starbox small ghosting"> </div>
+        </div>
+        <div class="women">
+          <h6><a href="#">Loream Name Here</a></h6>
+          <span class="size">BDS MDS - Conservative Dentistry </span>
+          16 years experience<br>
+Smile Essentials  and 1 more clinic
+<p>
+<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
+<br>
+<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
+<br>
+ <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
+      
+</p>
+
+         
+          <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    <div class="product-tab1">
+      <div class="col-md-4 product-tab1-grid">
+        <div class="grid-arr">
+          <div  class="grid-arrival">
+            <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+              <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
+              <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
+              </a> </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
+        <div class="block">
+          <div class="starbox small ghosting"> </div>
+        </div>
+        <div class="women">
+          <h6><a href="#">Loream Name Here</a></h6>
+          <span class="size">BDS MDS - Conservative Dentistry </span>
+          16 years experience<br>
+Smile Essentials  and 1 more clinic
+<p>
+<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
+<br>
+<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
+<br>
+ <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
+      
+</p>
+
+         
+          <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+</div>
+</div>
+</div>
+<div class="clearfix"> </div>
+</div>
+</div>
+</div>
+</div>
+
+<footer id="fh5co-footer">
+    <div class="fh5co-copyright animate-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="fh5co-left"> <small>&copy; 2016 pluse to pluse. All Rights Reserved.</small></p>
+            <div class="fh5co-right fh5co-social">
+              <ul class="fh5co-social">
+                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                <li><a href="#"><i class="icon-facebook"></i></a></li>
+                <li><a href="#"><i class="icon-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<!--copy--> 
+
+<!-- jQuery --> 
+<script src="js/jquery.min.js"></script> 
+<!-- jQuery Easing --> 
+<script src="js/jquery.easing.1.3.js"></script> 
+<!-- Bootstrap --> 
+<script src="js/bootstrap.min.js"></script> 
+<!-- Waypoints --> 
+<script src="js/jquery.waypoints.min.js"></script> 
+<!-- Flexslider --> 
+<script src="js/jquery.flexslider-min.js"></script> 
+<!-- Magnific Popup --> 
+<script src="js/jquery.magnific-popup.min.js"></script> 
+<script src="js/magnific-popup-options.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script> 
+<script type='text/javascript'>//<![CDATA[ 
+									$(window).load(function(){
+									 $( "#slider-range" ).slider({
+												range: true,
+												min: 0,
+												max: 9000,
+												values: [ 100, 7000 ],
+												slide: function( event, ui ) {  $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+												}
+									 });
+									$( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) + "- " + $( "#slider-range" ).slider( "values", 1 ) );
+
+									});//]]>  
+
+									</script> 
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+</body>
+</html>
