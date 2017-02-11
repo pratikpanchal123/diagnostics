@@ -31,11 +31,31 @@
             return serverApi.getData(getLabsCategoriesUrl,true);
         }
 
+        // Get doctors list
+        function getDoctorsByParams(location, keyword) {
+            var getDoctorUrl;
+            apiUrl.doctors.location = location;
+            apiUrl.doctors.keyword = keyword;
+            getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYPARAMS;
+            return serverApi.getData(getDoctorUrl,true);
+        }
+
+        // Get labs list
+        function getLabsByParams(location, keyword) {
+            var getLabsUrl;
+            apiUrl.labs.location = location;
+            apiUrl.labs.keyword = keyword;
+            getLabsUrl = constantData.SERVER_ADDRESS + apiUrl.labs.LABSBYPARAMS;
+            return serverApi.getData(getLabsUrl,true);
+        }
+
         return {
 			getDoctors:getDoctors,
 			getLabs:getLabs,
             getDoctorsCategories:getDoctorsCategories,
-            getLabsCategories:getLabsCategories
+            getLabsCategories:getLabsCategories,
+            getDoctorsByParams:getDoctorsByParams,
+            getLabsByParams:getLabsByParams,
 		};
 
 	}

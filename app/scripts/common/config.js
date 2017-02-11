@@ -11,14 +11,24 @@
 			loading: "<div class='loader'></div>"
 		}).constant('apiUrl',{
 		doctors:{
+			location: null,
+			keyword:null,
 			get DOCTORS(){
 				return '/doctors';
-			}
+			},
+            get DOCTORSBYPARAMS(){
+                return '/doctors/location/'+this.location+'/keyword/'+this.keyword;
+            },
 		},
 		labs:{
+            location: null,
+            keyword:null,
 			get LABS(){
 				return '/labs'
-			}
+			},
+            get LABSBYPARAMS(){
+                return '/labs/location/'+this.location+'/keyword/'+this.keyword;
+            }
 		},
         categories:{
             get CATEGORIES(){

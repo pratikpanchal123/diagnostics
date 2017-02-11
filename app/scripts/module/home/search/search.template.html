@@ -50,12 +50,16 @@
                     </div>
                     <div class="price">
                         <h3>Price Range</h3>
-                        <ul class="dropdown-menu6">
-                            <li>
-                                <div id="slider-range"></div>
-                                <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-                            </li>
-                        </ul>
+                        <rzslider rz-slider-model="home.slider.minValue"
+                                  rz-slider-high="home.slider.maxValue"
+                                  rz-slider-options="home.slider.options"></rzslider>
+
+                        <!--<ul class="dropdown-menu6">-->
+                            <!--<li>-->
+                                <!--<div id="slider-range"></div>-->
+                                <!--<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />-->
+                            <!--</li>-->
+                        <!--</ul>-->
                     </div>
 
 

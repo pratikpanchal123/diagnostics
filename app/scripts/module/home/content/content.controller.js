@@ -4,8 +4,37 @@
 	function homeController (contentFactory, $loadingOverlay, constantData) {
 		var _this = this;
         _this.view = 'list';
+        _this.keyword = "";
 
-        function init() {
+            function init() {
+            _this.slider = {
+                minValue: 0,
+                maxValue: 10000,
+                options: {
+                    floor: 0,
+                    ceil: 10000,
+                    showSelectionBar: true,
+                    getSelectionBarColor: function(value) {
+                        if (value <= 3000)
+                            return 'red';
+                        if (value <= 6000)
+                            return 'orange';
+                        if (value <= 10000)
+                            return 'yellow';
+                        return '#2AE02A';
+                    },
+                    onStart: function(id) {
+                        //console.log('on change ' + _this.price + '-' + _this.slider.maxValue); // logs 'on change slider-id'
+                    },
+                    onChange: function(id) {
+                        //console.log('on change ' + _this.price + '-' + _this.slider.maxValue); // logs 'on change slider-id'
+                    },
+                    onEnd: function(id) {
+                    	//search should start here
+                        //console.log('on change ' + _this.price + '-' + _this.slider.maxValue); // logs 'on change slider-id'
+                    }
+                }
+            };
 
             _this.searchInitiated = false;
 
@@ -46,8 +75,9 @@
 					}
 				});
 
+
                 $loadingOverlay.show(constantData.loading);
-				contentFactory.getDoctors().then(function (response) {
+				contentFactory.getDoctorsByParams(city, _this.keyword).then(function (response) {
 					console.log(response);
                     $loadingOverlay.hide();
                 },function (error) {
@@ -55,7 +85,7 @@
 				});
 
                 $loadingOverlay.show(constantData.loading);
-				contentFactory.getLabs().then(function (response) {
+				contentFactory.getLabsByParams(city, _this.keyword).then(function (response) {
 					console.log(response);
                     $loadingOverlay.hide();
 				},function (error) {

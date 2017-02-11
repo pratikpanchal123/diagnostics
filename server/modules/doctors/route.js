@@ -35,9 +35,31 @@ router.get("/doctors/:q", function(req, res) {
 		},function(response){
         res.json(response);
    });
-	
-	
-	
 });
+
+router.get("/doctors/location/:location/keyword/:keyword?", function(req, res) {
+    var location = req.params.location;
+    var keyword = req.params.keyword;
+    // DoctorsModel.findByFields({"state":q}, function(response){
+    // res.json(response);
+    // });
+    DoctorsModel.findByFields(
+        {
+            $or:[
+                {"address":new RegExp(location, 'i')},
+                {"city":new RegExp(location, 'i')},
+                {"state":new RegExp(location, 'i')}
+            ],
+            $or:[
+                {"firstName":new RegExp(keyword, 'i')},
+                {"lastName":new RegExp(keyword, 'i')},
+                {"speciality":new RegExp(keyword, 'i')},
+            ]
+        },function(response){
+            res.json(response);
+        });
+});
+
+
 
 module.exports = router;

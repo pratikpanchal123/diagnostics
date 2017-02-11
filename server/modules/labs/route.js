@@ -33,4 +33,26 @@ router.get('/labs/:q',function(req, res) {
 });
 
 
+router.get("/labs/location/:location/keyword/:keyword?", function(req, res) {
+    var location = req.params.location;
+    var keyword = req.params.keyword;
+    LabsModel.findByFields(
+        {
+            $or:[
+                {"address":new RegExp(location, 'i')},
+                {"address2":new RegExp(location, 'i')},
+                {"city":new RegExp(location, 'i')},
+                {"state":new RegExp(location, 'i')}
+            ],
+            $or:[
+                {"name":new RegExp(keyword, 'i')}
+            ]
+        },function(response){
+            res.json(response);
+        });
+});
+
+
+
+
 module.exports = router;
