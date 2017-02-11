@@ -13,16 +13,20 @@
 
 			_this.labsCat = ["Widal test","Erythrocyte sedimentation rate(esr)","Vitamin b12","Vdrl","Mantoux test","Pregnancy test","urine",  "Hepatitis profile","Ct scan"];
 
+            $loadingOverlay.show(constantData.loading);
             contentFactory.getDoctorsCategories().then(function (response) {
 				if(response.data.length > 0){
                     _this.doctorsCat = response.data;
+                    $loadingOverlay.hide();
 				}
             },function (error) {
             });
 
+            $loadingOverlay.show(constantData.loading);
             contentFactory.getLabsCategories().then(function (response) {
                 if(response.data.length > 0) {
                     _this.labsCat = response.data;
+                    $loadingOverlay.hide();
                 }
             },function (error) {
                 console.log(error);

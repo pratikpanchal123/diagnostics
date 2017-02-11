@@ -1658,8 +1658,8 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
   top: 47%;
   left: 47%;
   z-index: 10000;
-  /*background-image: url("images/wheel.svg");*/
-  background: url("../images/Preloader_2.gif");
+  background-image: url("../images/wheel.svg");
+  /*background: url("../images/Preloader_2.gif");*/
   background-size: 48px;
   background-repeat: no-repeat;
   vertical-align: middle;
