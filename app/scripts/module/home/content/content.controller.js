@@ -98,7 +98,40 @@
 			}
 		}
 
+        function searchBySpeciality(categoryId){
+
+		    if(_this.doctorsCat[categoryId].name){
+                _this.keyword = _this.doctorsCat[categoryId].name;
+            } else if(_this.doctorsCat[categoryId]){
+                _this.keyword = _this.doctorsCat[categoryId].name;
+            }
+
+            if(categoryId){
+                _this.searchInitiated = true;
+
+                $loadingOverlay.show(constantData.loading);
+                contentFactory.getDoctorsBySpeciality(categoryId).then(function (response) {
+                    _this.doctors = response.data;
+                    $loadingOverlay.hide();
+                },function (error) {
+                    console.log(error);
+                });
+
+                /*
+                $loadingOverlay.show(constantData.loading);
+                contentFactory.getLabsByParams(_this.city, _this.keyword).then(function (response) {
+                    _this.labs = response.data;
+                    $loadingOverlay.hide();
+                },function (error) {
+                    console.log(error);
+                });
+                */
+
+            }
+        }
+
 		_this.search = search;
+		_this.searchBySpeciality = searchBySpeciality;
 	}
 
 	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory'];

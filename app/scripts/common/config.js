@@ -13,11 +13,15 @@
 		doctors:{
 			location: null,
 			keyword:null,
+            speciality:null,
 			get DOCTORS(){
 				return '/doctors';
 			},
             get DOCTORSBYPARAMS(){
                 return '/doctors/location/'+this.location+'/keyword/'+this.keyword;
+            },
+            get DOCTORSBYSPECIALITY(){
+                return '/doctors/speciality/'+this.speciality;
             },
 		},
 		labs:{

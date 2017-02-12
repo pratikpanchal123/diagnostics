@@ -49,6 +49,14 @@
             return serverApi.getData(getLabsUrl,true);
         }
 
+        // Get doctors list
+        function getDoctorsBySpeciality(categoryId) {
+            var getDoctorUrl;
+            apiUrl.doctors.speciality = categoryId;
+            getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYSPECIALITY;
+            return serverApi.getData(getDoctorUrl,true);
+        }
+
         return {
 			getDoctors:getDoctors,
 			getLabs:getLabs,
@@ -56,6 +64,7 @@
             getLabsCategories:getLabsCategories,
             getDoctorsByParams:getDoctorsByParams,
             getLabsByParams:getLabsByParams,
+            getDoctorsBySpeciality:getDoctorsBySpeciality,
 		};
 
 	}
