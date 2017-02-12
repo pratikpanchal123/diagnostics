@@ -22,6 +22,7 @@ var LabsSchema   = new Schema({
 	rating: String,
 	labWorkingTime: String,
 	time: String,
+	pics:[],
 	createdDate:{ type: Date, default: Date.now }
 	});
 

@@ -8,7 +8,7 @@ var DoctorsSchema   = new Schema({
     speciality:String,
     city:String,
     state:String,
-	pic:String,
+	pics:[],
 	phone:String,
 	mobile:String,
 	email:String,
