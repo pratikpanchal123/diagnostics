@@ -39,7 +39,11 @@
                 }
             };
 
+            _this.defaultInitiated = true;
+
             _this.searchInitiated = false;
+
+            _this.detailInitiated = false;
 
             _this.doctorsCat = ["Dentist","Gynecologist","Orthopedist","Pediatrician","Ophthalmologist","Dermatologist","Physiotherapist","Infertility","Psychiatrist","Cardiologist","Urologist","Dietitian","Neurologist","Pulmonologist","Gastroenterologist","Neurosurgeon","Bariatric","Rheumatologist"];
 
@@ -69,7 +73,9 @@
 
 		function search(){
 			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
+                _this.defaultInitiated = false;
                 _this.searchInitiated = true;
+                _this.detailInitiated = false;
 
 				angular.forEach(_this.location.address_components, function(data){
 					if(data.types[0] == 'locality'){
@@ -107,7 +113,10 @@
             }
 
             if(categoryId){
+
+                _this.defaultInitiated = false;
                 _this.searchInitiated = true;
+                _this.detailInitiated = false;
 
                 $loadingOverlay.show(constantData.loading);
                 contentFactory.getDoctorsBySpeciality(categoryId).then(function (response) {
@@ -130,8 +139,27 @@
             }
         }
 
+
+        function getDoctorDetail(doctorId){
+            if(doctorId){
+
+                _this.defaultInitiated = false;
+                _this.searchInitiated = false;
+                _this.detailInitiated = true;
+
+                $loadingOverlay.show(constantData.loading);
+                contentFactory.getDoctorsById(doctorId).then(function (response) {
+                    _this.doctors = response.data;
+                    $loadingOverlay.hide();
+                },function (error) {
+                    console.log(error);
+                });
+            }
+        }
+
 		_this.search = search;
 		_this.searchBySpeciality = searchBySpeciality;
+		_this.getDoctorDetail = getDoctorDetail;
 	}
 
 	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory'];

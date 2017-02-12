@@ -33,5 +33,6 @@
     </div>
 </section>-->
 <div ui-view="search"></div>
-<div ui-view="defaultView" ng-if="home.searchInitiated == false"></div>
+<div ui-view="defaultView" ng-if="home.defaultInitiated == true"></div>
 <div ui-view="searchView" ng-if="home.searchInitiated == true"></div>
+<div ui-view="detailView" ng-if="home.detailInitiated == true"></div>

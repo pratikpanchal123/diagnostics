@@ -34,7 +34,10 @@
                     templateUrl:'scripts/module/home/search/search.template.html'
                 },
                 'search@index.home':{
-                    templateUrl:'scripts/module/home/content/search.template.html'
+                    templateUrl:'scripts/module/home/content/find.widget.template.html'
+                },
+                'detailView@index.home':{
+                    templateUrl:'scripts/module/home/search/detail.template.html'
                 }
             }
         });

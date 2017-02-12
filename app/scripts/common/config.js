@@ -14,6 +14,7 @@
 			location: null,
 			keyword:null,
             speciality:null,
+            doctorId:null,
 			get DOCTORS(){
 				return '/doctors';
 			},
@@ -23,6 +24,9 @@
             get DOCTORSBYSPECIALITY(){
                 return '/doctors/speciality/'+this.speciality;
             },
+            get DOCTORSBYID(){
+                return '/doctors/'+this.doctorId;
+			}
 		},
 		labs:{
             location: null,

@@ -17,7 +17,7 @@ router.get('/doctors',function(req, res) {
    });
 });
 
-router.get("/doctors/:q", function(req, res) {
+router.get("/doctors/query/:q", function(req, res) {
 	var q = req.params.q;
 	// DoctorsModel.findByFields({"state":q}, function(response){
 		// res.json(response);
@@ -63,6 +63,14 @@ router.get("/doctors/location/:location/keyword/:keyword?", function(req, res) {
 router.get("/doctors/speciality/:categoryId", function(req, res) {
     var categoryId = req.params.categoryId;
     DoctorsModel.findByFields({"speciality":categoryId},function(response){
+        res.json(response);
+    });
+});
+
+router.get("/doctors/:doctorId", function(req, res) {
+    var doctorId = req.params.doctorId;
+    console.log(doctorId);
+    DoctorsModel.findByFields({"_id":doctorId},function(response){
         res.json(response);
     });
 });

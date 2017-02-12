@@ -57,6 +57,13 @@
             return serverApi.getData(getDoctorUrl,true);
         }
 
+        function getDoctorsById(doctorId){
+            var getDoctorUrl;
+            apiUrl.doctors.doctorId = doctorId;
+            getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYID;
+            return serverApi.getData(getDoctorUrl,true);
+        }
+
         return {
 			getDoctors:getDoctors,
 			getLabs:getLabs,
@@ -65,6 +72,7 @@
             getDoctorsByParams:getDoctorsByParams,
             getLabsByParams:getLabsByParams,
             getDoctorsBySpeciality:getDoctorsBySpeciality,
+            getDoctorsById:getDoctorsById,
 		};
 
 	}
