@@ -1,0 +1,140 @@
+<!--content-->
+<div class="content">
+    <div class="products-agileinfo">
+
+        <div class="container">
+
+            <div class="product-agileinfo-grids w3l">
+
+                <div class="col-md-3 product-agileinfo-grid">
+
+                    <div class="categories">
+                        <ul class="tree-list-pad">
+                            <li>
+                                <input type="checkbox" id="item-0"/>
+                                <label for="item-0"><span></span>Appointment</label>
+                                <ul>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Instant Booking</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <input type="checkbox" id="item-1"/>
+                                <label for="item-1"><span></span>Location</label>
+                                <ul>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-2"/>
+                                <label for="item-2"><span></span>Availability</label>
+                                <ul>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Any</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">M.day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">T.day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">W.day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">T. day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">F. day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">S. day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">S. day</li>
+
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="price">
+                        <h3>Price Range</h3>
+                        <rzslider rz-slider-model="home.slider.minValue"
+                                  rz-slider-high="home.slider.maxValue"
+                                  rz-slider-options="home.slider.options"></rzslider>
+
+                        <!--<ul class="dropdown-menu6">-->
+                        <!--<li>-->
+                        <!--<div id="slider-range"></div>-->
+                        <!--<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                    </div>
+
+
+                    <div class="brand-w3l">
+                        <h3>Most Searched Localities</h3>
+                        <ul>
+                            <li><a href="#">Dermatologist in Andheri West</a></li>
+                            <li><a href="#">Dermatologist in West</a></li>
+                            <li><a href="#">Dermatologist in Andheri West</a></li>
+                            <li><a href="#">Dermatologist in Andheri </a></li>
+                            <li><a href="#">Dermatologist in West</a></li>
+                            <li><a href="#">Andheri West</a></li>
+                            <li><a href="#">Dermatologist in Andheri West</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="cat-img"><img class="img-responsive " src="images/banner.jpg" alt=""></div>
+                </div>
+                <div class="col-md-9 product-agileinfon-grid1 w3l" ng-if="home.doctors.length > 0">
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                        <div role="tabpanel" class="tab-pane fade in active" id="profile" aria-labelledby="profile-tab">
+                            <div ng-repeat="doctor in home.doctors track by $index">
+                                <div class="product-tab1 prod3">
+                                    <div class="col-md-4 product-tab1-grid">
+                                        <div class="grid-arr">
+                                            <div class="grid-arrival">
+                                                <figure ng-if="doctor.pics.length > 0"><a href="#" class="new-gri"
+                                                                                          data-toggle="modal"
+                                                                                          data-target="#myModal1">
+                                                    <div class="grid-img"><img src="images/p6.jpg"
+                                                                               class="img-responsive" alt=""></div>
+                                                    <div class="grid-img"><img src="images/p5.jpg"
+                                                                               class="img-responsive" alt=""></div>
+                                                </a></figure>
+                                                <figure ng-if="doctor.pics.length <= 0"><a href="#" class="new-gri"
+                                                                                           data-toggle="modal"
+                                                                                           data-target="#myModal1">
+                                                    <div class="grid-img"><img src="images/no-image.jpg"
+                                                                               class="img-responsive" alt=""></div>
+                                                </a></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
+                                        <div class="block">
+                                            <div class="starbox small ghosting"></div>
+                                        </div>
+                                        <div class="women">
+                                            <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a></h6>
+                                            <span class="size" ng-if="home.doctorsCat[doctor.speciality].name">
+                                                    {{home.doctorsCat[doctor.speciality].name}}
+                                            </span>
+                                            <span class="size" ng-if="home.doctorsCat[doctor.speciality].name==''">
+                                                    {{home.doctorsCat[doctor.speciality]}}
+                                            </span>
+                                            <p>
+                                                <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>{{doctor.address}}<br>
+                                                <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>{{doctor.mobile}}<br>
+                                                <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>{{doctor.email}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 product-agileinfon-grid1 w3l" ng-if="home.doctors.length <= 0">
+                    <div class="alert alert-info">No data found for selected criteria.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
