@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	// Home factory
-	function homeFactory(serverApi,$location,constantData,apiUrl) {
+	function homeFactory(serverApi,constantData,apiUrl) {
 
 		// Get doctors list
 		function getDoctors() {
@@ -62,7 +62,6 @@
 
 	homeFactory.$inject = [
 		'serverApi',
-		'$location',
 		'constantData',
 		'apiUrl'];
 

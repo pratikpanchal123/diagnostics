@@ -1,12 +1,15 @@
 (function() {
 	'use strict';
 
-	function homeController (contentFactory, $loadingOverlay, constantData) {
+	function homeController (contentFactory, $loadingOverlay, constantData, localContentFactory) {
 		var _this = this;
-        _this.view = 'list';
         _this.keyword = "";
+        _this.city = "";
+        _this.doctors = [];
+        _this.labs = [];
 
             function init() {
+
             _this.slider = {
                 minValue: 0,
                 maxValue: 10000,
@@ -42,7 +45,7 @@
 
 			_this.labsCat = ["Widal test","Erythrocyte sedimentation rate(esr)","Vitamin b12","Vdrl","Mantoux test","Pregnancy test","urine",  "Hepatitis profile","Ct scan"];
 
-            $loadingOverlay.show(constantData.loading);
+			$loadingOverlay.show(constantData.loading);
             contentFactory.getDoctorsCategories().then(function (response) {
 				if(response.data.length > 0){
                     _this.doctorsCat = response.data;
@@ -68,25 +71,23 @@
 			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
                 _this.searchInitiated = true;
 
-                var city = "";
 				angular.forEach(_this.location.address_components, function(data){
 					if(data.types[0] == 'locality'){
-						city = data.long_name;
+                        _this.city = data.long_name;
 					}
 				});
 
-
                 $loadingOverlay.show(constantData.loading);
-				contentFactory.getDoctorsByParams(city, _this.keyword).then(function (response) {
-					console.log(response);
+				contentFactory.getDoctorsByParams(_this.city, _this.keyword).then(function (response) {
+					_this.doctors = response.data;
                     $loadingOverlay.hide();
                 },function (error) {
 					console.log(error);
 				});
 
                 $loadingOverlay.show(constantData.loading);
-				contentFactory.getLabsByParams(city, _this.keyword).then(function (response) {
-					console.log(response);
+				contentFactory.getLabsByParams(_this.city, _this.keyword).then(function (response) {
+                    _this.labs = response.data;
                     $loadingOverlay.hide();
 				},function (error) {
 					console.log(error);
@@ -97,20 +98,10 @@
 			}
 		}
 
-		function listview(){
-			_this.view = 'list';
-		}
-
-		function gridview(){
-			_this.view = 'grid';
-		}
-
 		_this.search = search;
-		_this.listview = listview;
-		_this.gridview = gridview;
 	}
 
-	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData'];
+	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory'];
 	angular.module('app.pLabs.content',[]).controller('home.content.controller',homeController);
 })();
 

@@ -31,9 +31,7 @@
                     templateUrl:'scripts/module/home/content/default.template.html'
                 },
                 'searchView@index.home':{
-                    templateUrl:'scripts/module/home/search/search.template.html',
-                    controller: 'home.content.controller',
-                    controllerAs:'home'
+                    templateUrl:'scripts/module/home/search/search.template.html'
                 },
                 'search@index.home':{
                     templateUrl:'scripts/module/home/content/search.template.html'
@@ -55,6 +53,7 @@
 		'google.places',
 		'ngLoadingOverlay',
 		'rzModule',
+		'app.pLabs.common'
     ])
         .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {
