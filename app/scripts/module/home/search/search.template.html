@@ -11,36 +11,39 @@
                     <div class="categories">
                         <ul class="tree-list-pad">
                             <li>
-                                <input type="checkbox" id="item-0" />
+                                <input type="checkbox" id="item-0"/>
                                 <label for="item-0"><span></span>Appointment</label>
-                                <ul><li class="ttx"> <input type="radio" class="margin" value="">Instant Booking </li></ul>
+                                <ul>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Instant Booking</li>
+                                </ul>
                             </li>
 
                             <li>
-                                <input type="checkbox"  id="item-1" />
+                                <input type="checkbox" id="item-1"/>
                                 <label for="item-1"><span></span>Location</label>
-                                <ul><li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Loream Location </li>
+                                <ul>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Loream Location</li>
                                 </ul>
                             </li>
                             <li>
-                                <input type="checkbox"  id="item-2" />
+                                <input type="checkbox" id="item-2"/>
                                 <label for="item-2"><span></span>Availability</label>
                                 <ul>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">Any </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">M.day </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">T.day </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">W.day </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">T. day </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">F. day </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">S. day </li>
-                                    <li class="ttx"> <input  type="radio" class="margin" value="">S. day </li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">Any</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">M.day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">T.day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">W.day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">T. day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">F. day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">S. day</li>
+                                    <li class="ttx"><input type="radio" class="margin" value="">S. day</li>
 
 
                                 </ul>
@@ -55,50 +58,54 @@
                                   rz-slider-options="home.slider.options"></rzslider>
 
                         <!--<ul class="dropdown-menu6">-->
-                            <!--<li>-->
-                                <!--<div id="slider-range"></div>-->
-                                <!--<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />-->
-                            <!--</li>-->
+                        <!--<li>-->
+                        <!--<div id="slider-range"></div>-->
+                        <!--<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />-->
+                        <!--</li>-->
                         <!--</ul>-->
                     </div>
-
 
 
                     <div class="brand-w3l">
                         <h3>Most Searched Localities</h3>
                         <ul>
                             <li><a href="#">Dermatologist in Andheri West</a></li>
-                            <li><a href="#">Dermatologist in  West</a></li>
+                            <li><a href="#">Dermatologist in West</a></li>
                             <li><a href="#">Dermatologist in Andheri West</a></li>
                             <li><a href="#">Dermatologist in Andheri </a></li>
-                            <li><a href="#">Dermatologist in  West</a></li>
+                            <li><a href="#">Dermatologist in West</a></li>
                             <li><a href="#">Andheri West</a></li>
                             <li><a href="#">Dermatologist in Andheri West</a></li>
 
                         </ul>
                     </div>
-                    <div class="cat-img"> <img class="img-responsive " src="images/banner.jpg" alt=""> </div>
+                    <div class="cat-img"><img class="img-responsive " src="images/banner.jpg" alt=""></div>
                 </div>
                 <div class="col-md-9 product-agileinfon-grid1 w3l">
 
                     <div class="mens-toolbar">
                         <!--<p>Ophthalmologist in {{home.city}}</p>-->
-                        <p ng-if="home.keyword!=''">{{home.keyword}} Doctors <span ng-if="home.city!=''">{{home.city}}</span></p>
+                        <p ng-if="home.keyword!=''">Doctors<span ng-if="home.city!=''"> in {{home.city}}</span>, for <b>'{{home.keyword}}'</b>
+                        </p>
                         <p class="showing">Sorting By
                             <select>
                                 <option value=""> Name</option>
                                 <option value=""> Rate</option>
-                                <option value=""> Exp. </option>
-                                <option value=""> Price </option>
+                                <option value=""> Exp.</option>
+                                <option value=""> Price</option>
                             </select>
                         </p>
                         <div class="clearfix"></div>
                     </div>
                     <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class="nav1 nav1-tabs left-tab" role="tablist">
                             <ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
-                                <li role="presentation" > <a href="#home" target="_self"  id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><img src="images/menu1.png"></a></li>
-                                <li role="presentation" class="active"><a href="#profile" target="_self"  role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile"><img src="images/menu.png"></a></li>
+                                <li role="presentation"><a href="#home" target="_self" id="home-tab" role="tab"
+                                                           data-toggle="tab" aria-controls="home"
+                                                           aria-expanded="true"><img src="images/menu1.png"></a></li>
+                                <li role="presentation" class="active"><a href="#profile" target="_self" role="tab"
+                                                                          id="profile-tab" data-toggle="tab"
+                                                                          aria-controls="profile"><img
+                                        src="images/menu.png"></a></li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
 
@@ -106,31 +113,47 @@
 
                                 <div role="tabpanel" class="tab-pane fade" id="home" aria-labelledby="home-tab">
                                     <div class="product-tab">
-                                        <div  ng-repeat="doctor in home.doctors track by $index">
+                                        <div ng-repeat="doctor in home.doctors track by $index">
                                             <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
                                                 <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure ng-if="doctor.pics.length > 0"> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                            <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
-                                                            <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
-                                                        </a> </figure>
-                                                        <figure ng-if="doctor.pics.length <= 0"> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                            <div class="grid-img"> <img  src="images/no-image.jpg" class="img-responsive" alt=""> </div>
-                                                        </a> </figure>
+                                                    <div class="grid-arrival">
+                                                        <figure ng-if="doctor.pics.length > 0"><a href="#"
+                                                                                                  class="new-gri"
+                                                                                                  data-toggle="modal"
+                                                                                                  data-target="#myModal1">
+                                                            <div class="grid-img" ng-repeat="pic in doctor.pics"><img
+                                                                    ng-src="images/{{pic}}" class="img-responsive"
+                                                                    alt=""></div>
+                                                            <!--<div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>-->
+                                                        </a></figure>
+                                                        <figure ng-if="doctor.pics.length <= 0"><a href="#"
+                                                                                                   class="new-gri"
+                                                                                                   data-toggle="modal"
+                                                                                                   data-target="#myModal1">
+                                                            <div class="grid-img"><img src="images/no-image.jpg"
+                                                                                       class="img-responsive" alt="">
+                                                            </div>
+                                                        </a></figure>
                                                     </div>
                                                     <div class="block">
-                                                        <div class="starbox small ghosting"> </div>
+                                                        <div class="starbox small ghosting"></div>
                                                     </div>
                                                     <div class="women">
-                                                        <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a></h6>
-                                                        <span class="size" ng-if="home.doctorsCat[doctor.speciality].name">
+                                                        <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a>
+                                                        </h6>
+                                                        <span class="size"
+                                                              ng-if="home.doctorsCat[doctor.speciality].name!=''">
                                                             {{home.doctorsCat[doctor.speciality].name}}
                                                         </span>
-                                                        <span class="size" ng-if="home.doctorsCat[doctor.speciality].name==''">
+                                                        <span class="size"
+                                                              ng-if="home.doctorsCat[doctor.speciality].name==''">
                                                             {{home.doctorsCat[doctor.speciality]}}
                                                         </span>
 
-                                                        <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)" data-text="View More" class="my-cart-b item_add">View More</a> </div>
+                                                        <a href="javascript:"
+                                                           ng-click="home.getDoctorDetail(doctor._id)"
+                                                           data-text="View More" class="my-cart-b item_add">View
+                                                            More</a></div>
                                                 </div>
                                             </div>
                                             <div class="clearfix" ng-if="$index!=0 && ($index+1)%3==0"></div>
@@ -140,202 +163,65 @@
 
                                 <!-- active panel-->
 
-                                <div role="tabpanel" class="tab-pane fade in active"  id="profile" aria-labelledby="profile-tab">
-                                    <div  ng-repeat="doctor in home.doctors track by $index">
+                                <div role="tabpanel" class="tab-pane fade in active" id="profile"
+                                     aria-labelledby="profile-tab">
+                                    <div ng-repeat="doctor in home.doctors track by $index">
                                         <div class="product-tab1 prod3">
                                             <div class="col-md-4 product-tab1-grid">
                                                 <div class="grid-arr">
-                                                    <div  class="grid-arrival">
-                                                        <figure ng-if="doctor.pics.length > 0"> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                            <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
-                                                            <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
-                                                        </a> </figure>
-                                                        <figure ng-if="doctor.pics.length <= 0"> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                            <div class="grid-img"> <img  src="images/no-image.jpg" class="img-responsive" alt=""> </div>
-                                                        </a> </figure>
+                                                    <div class="grid-arrival">
+                                                        <figure ng-if="doctor.pics.length > 0"><a href="#"
+                                                                                                  class="new-gri"
+                                                                                                  data-toggle="modal"
+                                                                                                  data-target="#myModal1">
+                                                            <div class="grid-img" ng-repeat="pic in doctor.pics"><img
+                                                                    ng-src="images/{{pic}}" class="img-responsive"
+                                                                    alt=""></div>
+                                                            <!--<div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>-->
+                                                        </a></figure>
+                                                        <figure ng-if="doctor.pics.length <= 0"><a href="#"
+                                                                                                   class="new-gri"
+                                                                                                   data-toggle="modal"
+                                                                                                   data-target="#myModal1">
+                                                            <div class="grid-img"><img src="images/no-image.jpg"
+                                                                                       class="img-responsive" alt="">
+                                                            </div>
+                                                        </a></figure>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
                                                 <div class="block">
-                                                    <div class="starbox small ghosting"> </div>
+                                                    <div class="starbox small ghosting"></div>
                                                 </div>
                                                 <div class="women">
                                                     <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a></h6>
-                                                    <span class="size" ng-if="home.doctorsCat[doctor.speciality].name">
+                                                    <span class="size"
+                                                          ng-if="home.doctorsCat[doctor.speciality].name!=''">
                                                             {{home.doctorsCat[doctor.speciality].name}}
                                                     </span>
-                                                    <span class="size" ng-if="home.doctorsCat[doctor.speciality].name==''">
+                                                    <span class="size"
+                                                          ng-if="home.doctorsCat[doctor.speciality].name==''">
                                                             {{home.doctorsCat[doctor.speciality]}}
                                                     </span>
                                                     <p>
-                                                        <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>{{doctor.address}}<br>
+                                                        <i class="glyphicon glyphicon-map-marker"
+                                                           aria-hidden="true"></i>{{doctor.address}}<br>
                                                         <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>{{doctor.mobile}}<br>
                                                         <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>{{doctor.email}}
                                                     </p>
-                                                    <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)" data-text="View More" class="my-cart-b item_add">View More</a> </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-
- <!--                                   <div class="product-tab1 prod3">
-                                        <div class="col-md-4 product-tab1-grid">
-                                            <div class="grid-arr">
-                                                <div  class="grid-arrival">
-                                                    <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                        <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive" alt=""> </div>
-                                                        <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive"  alt=""> </div>
-                                                    </a> </figure>
+                                                    <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)"
+                                                       data-text="View More" class="my-cart-b item_add">View More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <div class="women">
-                                                <h6><a href="#">Loream Name Here</a></h6>
-                                                <span class="size">BDS MDS - Conservative Dentistry </span>
-                                                16 years experience<br>
-                                                Smile Essentials  and 1 more clinic
-                                                <p>
-                                                    <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
-
-                                                </p>
-
-
-                                                <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
-                                        </div>
                                         <div class="clearfix"></div>
                                     </div>
-
-
-
-
-                                    <div class="product-tab1">
-                                        <div class="col-md-4 product-tab1-grid">
-                                            <div class="grid-arr">
-                                                <div  class="grid-arrival">
-                                                    <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                        <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive" alt=""> </div>
-                                                        <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive"  alt=""> </div>
-                                                    </a> </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <div class="women">
-                                                <h6><a href="#">Loream Name Here</a></h6>
-                                                <span class="size">BDS MDS - Conservative Dentistry </span>
-                                                16 years experience<br>
-                                                Smile Essentials  and 1 more clinic
-                                                <p>
-                                                    <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
-
-                                                </p>
-
-
-                                                <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-
-
-                                    <div class="product-tab1 prod3">
-                                        <div class="col-md-4 product-tab1-grid">
-                                            <div class="grid-arr">
-                                                <div  class="grid-arrival">
-                                                    <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                        <div class="grid-img"> <img  src="images/p8.jpg" class="img-responsive" alt=""> </div>
-                                                        <div class="grid-img"> <img  src="images/p7.jpg" class="img-responsive"  alt=""> </div>
-                                                    </a> </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <div class="women">
-                                                <h6><a href="#">Loream Name Here</a></h6>
-                                                <span class="size">BDS MDS - Conservative Dentistry </span>
-                                                16 years experience<br>
-                                                Smile Essentials  and 1 more clinic
-                                                <p>
-                                                    <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
-
-                                                </p>
-
-
-                                                <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-
-                                    <div class="product-tab1">
-                                        <div class="col-md-4 product-tab1-grid">
-                                            <div class="grid-arr">
-                                                <div  class="grid-arrival">
-                                                    <figure> <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-                                                        <div class="grid-img"> <img  src="images/p6.jpg" class="img-responsive" alt=""> </div>
-                                                        <div class="grid-img"> <img  src="images/p5.jpg" class="img-responsive"  alt=""> </div>
-                                                    </a> </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 product-tab1-grid1 simpleCart_shelfItem">
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <div class="women">
-                                                <h6><a href="#">Loream Name Here</a></h6>
-                                                <span class="size">BDS MDS - Conservative Dentistry </span>
-                                                16 years experience<br>
-                                                Smile Essentials  and 1 more clinic
-                                                <p>
-                                                    <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>  WHRd, Westby, India</li>
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>  +91 4599-033-5036
-                                                    <br>
-                                                    <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>  example@mail.com
-
-                                                </p>
-
-
-                                                <a href="#" data-text="View More" class="my-cart-b item_add">View More</a> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
--->
-
-
-
-
                                 </div>
                             </div>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
