@@ -7,8 +7,11 @@
         _this.city = "";
         _this.doctors = [];
         _this.labs = [];
+        _this.categories = [];
 
             function init() {
+
+                localContentFactory.setCategories();
 
             _this.slider = {
                 minValue: 0,
@@ -72,7 +75,10 @@
         init();
 
 		function search(){
-			if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
+
+            _this.categories = localContentFactory.getCategories();
+
+            if(_this.location && _this.location.address_components && _this.location.address_components[0].long_name){
                 _this.defaultInitiated = false;
                 _this.searchInitiated = true;
                 _this.detailInitiated = false;
@@ -106,10 +112,12 @@
 
         function searchBySpeciality(categoryId){
 
-		    if(_this.doctorsCat[categoryId].name){
-                _this.keyword = _this.doctorsCat[categoryId].name;
+            _this.categories = localContentFactory.getCategories();
+
+		    if(_this.categories[categoryId].name){
+                _this.keyword = _this.categories[categoryId].name;
             } else if(_this.doctorsCat[categoryId]){
-                _this.keyword = _this.doctorsCat[categoryId].name;
+                _this.keyword = _this.doctorsCat[categoryId];
             }
 
             if(categoryId){
@@ -141,6 +149,9 @@
 
 
         function getDoctorDetail(doctorId){
+
+            _this.categories = localContentFactory.getCategories();
+
             if(doctorId){
 
                 _this.defaultInitiated = false;

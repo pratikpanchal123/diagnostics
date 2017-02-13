@@ -112,10 +112,10 @@
                                         </div>
                                         <div class="women">
                                             <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a></h6>
-                                            <span class="size" ng-if="home.doctorsCat[doctor.speciality].name">
-                                                    {{home.doctorsCat[doctor.speciality].name}}
+                                            <span class="size" ng-if="home.categories[doctor.speciality].name">
+                                                    {{home.categories[doctor.speciality].name}}
                                             </span>
-                                            <span class="size" ng-if="home.doctorsCat[doctor.speciality].name==''">
+                                            <span class="size" ng-if="home.categories[doctor.speciality].name==''">
                                                     {{home.doctorsCat[doctor.speciality]}}
                                             </span>
                                             <p>

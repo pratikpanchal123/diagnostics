@@ -85,8 +85,7 @@
 
                     <div class="mens-toolbar">
                         <!--<p>Ophthalmologist in {{home.city}}</p>-->
-                        <p ng-if="home.keyword!=''">Doctors<span ng-if="home.city!=''"> in {{home.city}}</span>, for <b>'{{home.keyword}}'</b>
-                        </p>
+                        <p ng-if="home.keyword!=''"><b>'{{home.keyword}}'</b> <span ng-if="home.city!=''"> in {{home.city}}</span></p>
                         <p class="showing">Sorting By
                             <select>
                                 <option value=""> Name</option>
@@ -142,11 +141,11 @@
                                                         <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a>
                                                         </h6>
                                                         <span class="size"
-                                                              ng-if="home.doctorsCat[doctor.speciality].name!=''">
-                                                            {{home.doctorsCat[doctor.speciality].name}}
+                                                              ng-if="home.categories[doctor.speciality].name!=''">
+                                                            {{home.categories[doctor.speciality].name}}
                                                         </span>
                                                         <span class="size"
-                                                              ng-if="home.doctorsCat[doctor.speciality].name==''">
+                                                              ng-if="home.categories[doctor.speciality].name==''">
                                                             {{home.doctorsCat[doctor.speciality]}}
                                                         </span>
 
@@ -197,13 +196,13 @@
                                                 <div class="women">
                                                     <h6><a href="#">{{doctor.firstName}} {{doctor.lastName}}</a></h6>
                                                     <span class="size"
-                                                          ng-if="home.doctorsCat[doctor.speciality].name!=''">
-                                                            {{home.doctorsCat[doctor.speciality].name}}
-                                                    </span>
+                                                          ng-if="home.categories[doctor.speciality].name!=''">
+                                                            {{home.categories[doctor.speciality].name}}
+                                                        </span>
                                                     <span class="size"
-                                                          ng-if="home.doctorsCat[doctor.speciality].name==''">
+                                                          ng-if="home.categories[doctor.speciality].name==''">
                                                             {{home.doctorsCat[doctor.speciality]}}
-                                                    </span>
+                                                        </span>
                                                     <p>
                                                         <i class="glyphicon glyphicon-map-marker"
                                                            aria-hidden="true"></i>{{doctor.address}}<br>
