@@ -37,7 +37,7 @@ router.get("/doctors/query/:q", function(req, res) {
    });
 });
 
-router.get("/doctors/location/:location/keyword/:keyword?", function(req, res) {
+router.get("/doctors/location/:location/keyword/:keyword", function(req, res) {
     var location = req.params.location;
     var keyword = req.params.keyword;
     // DoctorsModel.findByFields({"state":q}, function(response){
@@ -48,9 +48,7 @@ router.get("/doctors/location/:location/keyword/:keyword?", function(req, res) {
             $or:[
                 {"address":new RegExp(location, 'i')},
                 {"city":new RegExp(location, 'i')},
-                {"state":new RegExp(location, 'i')}
-            ],
-            $or:[
+                {"state":new RegExp(location, 'i')},
                 {"firstName":new RegExp(keyword, 'i')},
                 {"lastName":new RegExp(keyword, 'i')},
                 {"speciality":new RegExp(keyword, 'i')},
