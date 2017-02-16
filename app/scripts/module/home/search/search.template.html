@@ -83,7 +83,7 @@
                     <div class="mens-toolbar">
                         <!--<p>Ophthalmologist in {{home.city}}</p>-->
                         <p ng-if="home.keyword!='' && home.doctors.length > 0"><b>'{{home.keyword}}'</b> <span ng-if="home.city!=''"> in {{home.city}}</span></p>
-                        <p class="showing" ng-if="home.doctors.length > 0">Sorting By
+                        <p class="showing">Sorting By
                             <select ng-model="sortby">
                                 <option selected value="firstName"> Name</option>
                                 <option value="rating"> Rating</option>
@@ -213,6 +213,8 @@
                                                                 {{home.getDay(d)}},
                                                         </i>
                                                         <br>
+                                                        <i ng-if="doctor.experience" class="glyphicon glyphicon-time" aria-hidden="true"></i>&nbsp;{{doctor.experience}} years<br>
+                                                        <i ng-if="doctor.rating" class="glyphicon glyphicon-certificate" aria-hidden="true"></i>&nbsp;{{doctor.rating}} *<br>
                                                     </p>
                                                     <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)"
                                                        data-text="View More" class="my-cart-b item_add">View More</a>
