@@ -12,6 +12,13 @@ var DoctorsSchema   = new Schema({
 	phone:String,
 	mobile:String,
 	email:String,
+	availibity:[],
+    from_time:String,
+    to_time:String,
+    first_consultation:Number,
+    fees:Number,
+    rating:Number,
+    experience:Number,
     createdDate:{ type: Date, default: Date.now },
 });
 

@@ -36,16 +36,14 @@
                                 <input type="checkbox" id="item-2"/>
                                 <label for="item-2"><span></span>Availability</label>
                                 <ul>
-                                    <li class="ttx"><input type="radio" class="margin" value="">Any</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">M.day</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">T.day</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">W.day</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">T. day</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">F. day</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">S. day</li>
-                                    <li class="ttx"><input type="radio" class="margin" value="">S. day</li>
-
-
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="">Any</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="1">Monday</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="2">Tueday</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="3">Wednesday</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="4">Thurday</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="5">Friday</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="6">Saturday</li>
+                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="0">Sunday</li>
                                 </ul>
                             </li>
 
@@ -69,14 +67,13 @@
                     <div class="brand-w3l">
                         <h3>Most Searched Localities</h3>
                         <ul>
-                            <li><a href="#">Dermatologist in Andheri West</a></li>
-                            <li><a href="#">Dermatologist in West</a></li>
-                            <li><a href="#">Dermatologist in Andheri West</a></li>
-                            <li><a href="#">Dermatologist in Andheri </a></li>
-                            <li><a href="#">Dermatologist in West</a></li>
-                            <li><a href="#">Andheri West</a></li>
-                            <li><a href="#">Dermatologist in Andheri West</a></li>
-
+                            <li><a href="javascript:" ng-click="home.searchByCity('Ahmedabad')">Ahmedabad</a></li>
+                            <li><a href="javascript:" ng-click="home.searchByCity('Baroda')">Baroda</a></li>
+                            <li><a href="javascript:" ng-click="home.searchByCity('Bhavnagar')">Bhavnagar</a></li>
+                            <li><a href="javascript:" ng-click="home.searchByCity('Rajkot')">Rajkot</a></li>
+                            <li><a href="javascript:" ng-click="home.searchByCity('Surat')">Surat</a></li>
+                            <li><a href="javascript:" ng-click="home.searchByCity('Vapi')">Vapi</a></li>
+                            <li><a href="javascript:" ng-click="home.searchByCity('Valsad')">Valsad</a></li>
                         </ul>
                     </div>
                     <div class="cat-img"><img class="img-responsive " src="images/banner.jpg" alt=""></div>
@@ -85,19 +82,20 @@
 
                     <div class="mens-toolbar">
                         <!--<p>Ophthalmologist in {{home.city}}</p>-->
-                        <p ng-if="home.keyword!=''"><b>'{{home.keyword}}'</b> <span ng-if="home.city!=''"> in {{home.city}}</span></p>
-                        <p class="showing">Sorting By
-                            <select>
-                                <option value=""> Name</option>
-                                <option value=""> Rate</option>
-                                <option value=""> Exp.</option>
-                                <option value=""> Price</option>
+                        <p ng-if="home.keyword!='' && home.doctors.length > 0"><b>'{{home.keyword}}'</b> <span ng-if="home.city!=''"> in {{home.city}}</span></p>
+                        <p class="showing" ng-if="home.doctors.length > 0">Sorting By
+                            <select ng-model="sortby">
+                                <option selected value="firstName"> Name</option>
+                                <option value="rating"> Rating</option>
+                                <option value="experience"> Exp.</option>
+                                <option value="price"> Price</option>
                             </select>
                         </p>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                            <ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs" ng-if="home.doctors.length > 0">
+                            <ul id="myTab" class="nav nav-tabs left-tab" role="tablist" >
                                 <li role="presentation"><a href="#home" target="_self" id="home-tab" role="tab"
                                                            data-toggle="tab" aria-controls="home"
                                                            aria-expanded="true"><img src="images/menu1.png"></a></li>
@@ -112,7 +110,7 @@
 
                                 <div role="tabpanel" class="tab-pane fade" id="home" aria-labelledby="home-tab">
                                     <div class="product-tab">
-                                        <div ng-repeat="doctor in home.doctors track by $index">
+                                        <div ng-repeat="doctor in home.doctors | orderBy:sortby">
                                             <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
                                                 <div class="grid-arr">
                                                     <div class="grid-arrival">
@@ -164,7 +162,7 @@
 
                                 <div role="tabpanel" class="tab-pane fade in active" id="profile"
                                      aria-labelledby="profile-tab">
-                                    <div ng-repeat="doctor in home.doctors track by $index">
+                                    <div ng-repeat="doctor in home.doctors | orderBy:sortby">
                                         <div class="product-tab1 prod3">
                                             <div class="col-md-4 product-tab1-grid">
                                                 <div class="grid-arr">
@@ -204,10 +202,13 @@
                                                             {{home.doctorsCat[doctor.speciality]}}
                                                         </span>
                                                     <p>
-                                                        <i class="glyphicon glyphicon-map-marker"
+                                                        <i ng-if="doctor.address" class="glyphicon glyphicon-map-marker"
                                                            aria-hidden="true"></i>{{doctor.address}}<br>
-                                                        <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>{{doctor.mobile}}<br>
-                                                        <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>{{doctor.email}}
+                                                        <i ng-if="doctor.mobile" class="glyphicon glyphicon-earphone" aria-hidden="true"></i>&nbsp;{{doctor.mobile}}<br>
+                                                        <i ng-if="doctor.email" class="glyphicon glyphicon-envelope" aria-hidden="true"></i>&nbsp;{{doctor.email}}<br>
+                                                        <i ng-if="doctor.fees" class="glyphicon glyphicon-bitcoin" aria-hidden="true"></i>&nbsp;{{doctor.fees}}<br>
+                                                        <!--<i class="glyphicon glyphicon-currency" aria-hidden="true"></i>&nbsp;{{doctor.first_consulation}}<br>-->
+                                                        <i ng-if="doctor.from_time" class="glyphicon glyphicon-time" aria-hidden="true"></i>&nbsp;{{doctor.from_time}}-{{doctor.to_time}}
                                                     </p>
                                                     <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)"
                                                        data-text="View More" class="my-cart-b item_add">View More</a>
@@ -218,6 +219,9 @@
                                     </div>
                                 </div>
                             </div>
+                    </div>
+                    <div class="alert alert-info" ng-if="home.doctors.length == 0">
+                        No record found for this search criteria.
                     </div>
                 </div>
                 <div class="clearfix"></div>

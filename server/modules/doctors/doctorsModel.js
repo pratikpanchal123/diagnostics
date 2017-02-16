@@ -13,6 +13,16 @@ function Save(req,callback){
     doctors.speciality = req.body.speciality;
     doctors.city = req.body.city;
     doctors.state = req.body.state;
+    doctors.phone = req.body.phone;
+    doctors.mobile = req.body.mobile;
+    doctors.email = req.body.email;
+    doctors.availibity = req.body.availibity;
+    doctors.from_time = req.body.from_time;
+    doctors.to_time = req.body.to_time;
+    doctors.first_consulation = req.body.first_consulation;
+    doctors.fees = req.body.fees;
+    doctors.rating = req.body.rating;
+    doctors.experience = req.body.experience;
 
     doctors.save(function(err) {
             if (err){
