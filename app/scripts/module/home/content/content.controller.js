@@ -120,10 +120,7 @@
                 _this.searchInitiated = true;
                 _this.detailInitiated = false;
 
-                _this.doctors = [];
-                _this.labs    = [];
-
-                $loadingOverlay.show(constantData.loading);
+                 $loadingOverlay.show(constantData.loading);
                 contentFactory.getDoctorsByParams(_this.city, _this.keyword).then(function (response) {
                     _this.doctors = response.data;
                     $loadingOverlay.hide();
@@ -206,12 +203,25 @@
             }
         }
 
+        function getDay(d){
+            var days = [];
+            days[0] = "Sunday";
+            days[1] = "Monday";
+            days[2] = "Tuesday";
+            days[3] = "Wednesday";
+            days[4] = "Thursday";
+            days[5] = "Friday";
+            days[6] = "Saturday";
+            return days[d];
+        }
+
 		_this.search = search;
 		_this.searchBySpeciality = searchBySpeciality;
 		_this.searchByCity = searchByCity;
 		_this.getDoctorDetail = getDoctorDetail;
 		_this.filterByAvailibity = filterByAvailibity;
 		_this.filterByPrice = filterByPrice;
+		_this.getDay = getDay;
 	}
 
 	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory'];

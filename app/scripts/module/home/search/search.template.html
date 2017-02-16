@@ -208,7 +208,11 @@
                                                         <i ng-if="doctor.email" class="glyphicon glyphicon-envelope" aria-hidden="true"></i>&nbsp;{{doctor.email}}<br>
                                                         <i ng-if="doctor.fees" class="glyphicon glyphicon-bitcoin" aria-hidden="true"></i>&nbsp;{{doctor.fees}}<br>
                                                         <!--<i class="glyphicon glyphicon-currency" aria-hidden="true"></i>&nbsp;{{doctor.first_consulation}}<br>-->
-                                                        <i ng-if="doctor.from_time" class="glyphicon glyphicon-time" aria-hidden="true"></i>&nbsp;{{doctor.from_time}}-{{doctor.to_time}}
+                                                        <i ng-if="doctor.from_time" class="glyphicon glyphicon-time" aria-hidden="true"></i>&nbsp;{{doctor.from_time}}-{{doctor.to_time}}<br>
+                                                        <i ng-if="doctor.availibity" ng-repeat="d in doctor.availibity">&nbsp;
+                                                                {{home.getDay(d)}},
+                                                        </i>
+                                                        <br>
                                                     </p>
                                                     <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)"
                                                        data-text="View More" class="my-cart-b item_add">View More</a>
