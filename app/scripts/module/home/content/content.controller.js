@@ -110,6 +110,37 @@
 			}
 		}
 
+        function searchByCity(city){
+
+            _this.city = _this.location = city;
+
+            _this.categories = localContentFactory.getCategories();
+
+                _this.defaultInitiated = false;
+                _this.searchInitiated = true;
+                _this.detailInitiated = false;
+
+                _this.doctors = [];
+                _this.labs    = [];
+
+                $loadingOverlay.show(constantData.loading);
+                contentFactory.getDoctorsByParams(_this.city, _this.keyword).then(function (response) {
+                    _this.doctors = response.data;
+                    $loadingOverlay.hide();
+                },function (error) {
+                    console.log(error);
+                });
+
+                $loadingOverlay.show(constantData.loading);
+                contentFactory.getLabsByParams(_this.city, _this.keyword).then(function (response) {
+                    _this.labs = response.data;
+                    $loadingOverlay.hide();
+                },function (error) {
+                    console.log(error);
+                });
+
+        }
+
         function searchBySpeciality(categoryId){
 
             _this.categories = localContentFactory.getCategories();
@@ -147,6 +178,13 @@
             }
         }
 
+        function filterByPrice(){
+
+        }
+
+        function filterByAvailibity(){
+
+        }
 
         function getDoctorDetail(doctorId){
 
@@ -170,7 +208,10 @@
 
 		_this.search = search;
 		_this.searchBySpeciality = searchBySpeciality;
+		_this.searchByCity = searchByCity;
 		_this.getDoctorDetail = getDoctorDetail;
+		_this.filterByAvailibity = filterByAvailibity;
+		_this.filterByPrice = filterByPrice;
 	}
 
 	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory'];
