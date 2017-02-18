@@ -8,6 +8,7 @@
         _this.doctors = [];
         _this.labs = [];
         _this.categories = [];
+        _this.doctorsListBeforePriceRange = [];
 
             function init() {
 
@@ -15,17 +16,21 @@
 
             _this.slider = {
                 minValue: 0,
-                maxValue: 10000,
+                maxValue: 1000,
                 options: {
                     floor: 0,
-                    ceil: 10000,
+                    ceil: 1000,
                     showSelectionBar: true,
+                    hideLimitLabels:true,
+                    translate: function(value) {
+                        return 'Rs.' + value;
+                    },
                     getSelectionBarColor: function(value) {
-                        if (value <= 3000)
+                        if (value <= 300)
                             return 'red';
-                        if (value <= 6000)
+                        if (value <= 600)
                             return 'orange';
-                        if (value <= 10000)
+                        if (value <= 1000)
                             return 'yellow';
                         return '#2AE02A';
                     },
@@ -33,6 +38,7 @@
                         //console.log('on change ' + _this.price + '-' + _this.slider.maxValue); // logs 'on change slider-id'
                     },
                     onChange: function(id) {
+                        filterByPrice();
                         //console.log('on change ' + _this.price + '-' + _this.slider.maxValue); // logs 'on change slider-id'
                     },
                     onEnd: function(id) {
@@ -176,7 +182,18 @@
         }
 
         function filterByPrice(){
-
+            if(_this.doctorsListBeforePriceRange.length == 0) {
+                _this.doctorsListBeforePriceRange = _this.doctors;
+            } else {
+                _this.doctors = _this.doctorsListBeforePriceRange;
+            }
+            var output = [];
+            angular.forEach(_this.doctors, function (item) {
+                if(item.fees >= _this.slider.minValue && item.fees <= _this.slider.maxValue){
+                    output.push(item);
+                }
+            });
+            _this.doctors = output;
         }
 
         function filterByAvailibity(){
@@ -222,6 +239,7 @@
 		_this.filterByAvailibity = filterByAvailibity;
 		_this.filterByPrice = filterByPrice;
 		_this.getDay = getDay;
+		_this.filterByPrice = filterByPrice;
 	}
 
 	homeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory'];

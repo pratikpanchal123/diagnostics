@@ -58,6 +58,20 @@ router.get("/doctors/location/:location/keyword/:keyword", function(req, res) {
         });
 });
 
+router.get("/doctors/location/:location", function(req, res) {
+    var location = req.params.location;
+    DoctorsModel.findByFields(
+        {
+            $or:[
+                {"address":new RegExp(location, 'i')},
+                {"city":new RegExp(location, 'i')},
+                {"state":new RegExp(location, 'i')}
+            ]
+        },function(response){
+            res.json(response);
+        });
+});
+
 router.get("/doctors/speciality/:categoryId", function(req, res) {
     var categoryId = req.params.categoryId;
     DoctorsModel.findByFields({"speciality":categoryId},function(response){

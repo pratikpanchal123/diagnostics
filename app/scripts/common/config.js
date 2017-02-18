@@ -21,6 +21,9 @@
             get DOCTORSBYPARAMS(){
                 return '/doctors/location/'+this.location+'/keyword/'+this.keyword;
             },
+            get DOCTORSBYLOCATION(){
+                return '/doctors/location/'+this.location;
+            },
             get DOCTORSBYSPECIALITY(){
                 return '/doctors/speciality/'+this.speciality;
             },

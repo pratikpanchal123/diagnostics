@@ -83,15 +83,17 @@
                     <div class="mens-toolbar">
                         <!--<p>Ophthalmologist in {{home.city}}</p>-->
                         <p ng-if="home.keyword!='' && home.doctors.length > 0"><b>'{{home.keyword}}'</b> <span ng-if="home.city!=''"> in {{home.city}}</span></p>
+                        <span ng-if="home.doctors.length > 0">
                         <p class="showing">Sorting By
                             <select ng-model="sortby">
                                 <option selected value="firstName"> Name</option>
                                 <option value="rating"> Rating</option>
                                 <option value="experience"> Exp.</option>
-                                <option value="price"> Price</option>
+                                <option value="fees"> Price</option>
                             </select>
                         </p>
                         <div class="clearfix"></div>
+                            </span>
                     </div>
 
                     <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs" ng-if="home.doctors.length > 0">

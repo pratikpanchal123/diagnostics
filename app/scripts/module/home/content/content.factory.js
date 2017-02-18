@@ -36,7 +36,11 @@
             var getDoctorUrl;
             apiUrl.doctors.location = location;
             apiUrl.doctors.keyword = keyword;
-            getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYPARAMS;
+            if(keyword == '' || keyword.trim() == ''){
+                getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYLOCATION;
+            } else {
+                getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYPARAMS;
+            }
             return serverApi.getData(getDoctorUrl,true);
         }
 
