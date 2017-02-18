@@ -8,7 +8,7 @@
 
                 <div class="col-md-3 product-agileinfo-grid">
 
-                    <div class="categories">
+                   <!-- <div class="categories">
                         <ul class="tree-list-pad">
                             <li>
                                 <input type="checkbox" id="item-0"/>
@@ -36,19 +36,35 @@
                                 <input type="checkbox" id="item-2"/>
                                 <label for="item-2"><span></span>Availability</label>
                                 <ul>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="">Any</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="1">Monday</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="2">Tueday</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="3">Wednesday</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="4">Thurday</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="5">Friday</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="6">Saturday</li>
-                                    <li class="ttx"><input type="radio" class="margin" ng-model="dayFilter" value="0">Sunday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="">Any</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="1">Monday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="2">Tueday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="3">Wednesday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="4">Thurday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="5">Friday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="6">Saturday</li>
+                                    <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="0">Sunday</li>
                                 </ul>
                             </li>
 
                         </ul>
+                    </div>-->
+
+                    <div class="price" style="margin-top: 0px;padding: 0px;">
+                        <h3>Search By Availability</h3>
+                        <ul class="daysList">
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="">Any</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="1">Monday</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="2">Tueday</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="3">Wednesday</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="4">Thurday</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="5">Friday</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="6">Saturday</li>
+                            <li class="ttx"><input type="radio" ng-change="home.filterByAvailibity()" class="margin" ng-model="home.dayFilter" ng-value="0">Sunday</li>
+                        </ul>
                     </div>
+
+
                     <div class="price">
                         <h3>Price Range</h3>
                         <rzslider rz-slider-model="home.slider.minValue"
@@ -216,7 +232,9 @@
                                                         </i>
                                                         <br>
                                                         <i ng-if="doctor.experience" class="glyphicon glyphicon-time" aria-hidden="true"></i>&nbsp;{{doctor.experience}} years<br>
-                                                        <i ng-if="doctor.rating" class="glyphicon glyphicon-certificate" aria-hidden="true"></i>&nbsp;{{doctor.rating}} *<br>
+                                                        <div ng-if="doctor.rating" aria-hidden="true">
+                                                            {{doctor.rating}} STAR RATING
+                                                        </div>
                                                     </p>
                                                     <a href="javascript:" ng-click="home.getDoctorDetail(doctor._id)"
                                                        data-text="View More" class="my-cart-b item_add">View More</a>

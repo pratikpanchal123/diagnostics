@@ -1669,3 +1669,16 @@ background-image: linear-gradient(#25a3e7, #0b79c1);
   font-weight: bold;
   cursor: none;
 }
+
+ul.daysList{
+  list-style: none;
+  margin-left: 15px;
+}
+
+ul.daysList > li{
+  margin-left: 15px;
+}
+
+span.rating {
+  content: "\2605";
+}

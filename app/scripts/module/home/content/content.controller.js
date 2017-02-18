@@ -9,6 +9,7 @@
         _this.labs = [];
         _this.categories = [];
         _this.doctorsListBeforePriceRange = [];
+        _this.dayFilter = undefined;
 
             function init() {
 
@@ -197,7 +198,25 @@
         }
 
         function filterByAvailibity(){
+            if(_this.doctorsListBeforePriceRange.length == 0) {
+                _this.doctorsListBeforePriceRange = _this.doctors;
+            } else {
+                _this.doctors = _this.doctorsListBeforePriceRange;
+            }
 
+            if(_this.dayFilter == "" || _this.dayFilter == undefined) {
+                return _this.doctors;
+            } else {
+                var output = [];
+                var dayFilter = _this.dayFilter;
+                angular.forEach(_this.doctors, function (item) {
+                    if(item.availibity.indexOf(dayFilter) != -1){
+                        //console.log(item.availibity);
+                        output.push(item);
+                    }
+                });
+                _this.doctors = output;
+            }
         }
 
         function getDoctorDetail(doctorId){
