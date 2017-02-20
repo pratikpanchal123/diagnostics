@@ -45,14 +45,22 @@ router.get("/doctors/location/:location/keyword/:keyword", function(req, res) {
     // });
     DoctorsModel.findByFields(
         {
-            $or:[
-                {"address":new RegExp(location, 'i')},
-                {"city":new RegExp(location, 'i')},
-                {"state":new RegExp(location, 'i')},
-                {"firstName":new RegExp(keyword, 'i')},
-                {"lastName":new RegExp(keyword, 'i')},
-                {"speciality":new RegExp(keyword, 'i')},
-            ]
+            $and:[
+                {
+                    $or:[
+                        {"address":new RegExp(location, 'i')},
+                        {"city":new RegExp(location, 'i')},
+                        {"state":new RegExp(location, 'i')}
+                    ]
+                },
+                {
+                    $or:[
+                        {"firstName":new RegExp(keyword, 'i')},
+                        {"lastName":new RegExp(keyword, 'i')},
+                        {"speciality":new RegExp(keyword, 'i')}
+                    ]
+                }
+            ],
         },function(response){
             res.json(response);
         });
