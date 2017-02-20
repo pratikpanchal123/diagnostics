@@ -23,7 +23,7 @@ router.post('/validate',function(req, res) {
     })
 });
 
-router.post('/signin',function(req, res) {
+router.post('/users/signin',function(req, res) {
     UsersModel.validateUser(req,function(response){
         res.json(response);
     })
