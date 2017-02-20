@@ -99,7 +99,7 @@
                     <div class="mens-toolbar">
                         <!--<p>Ophthalmologist in {{home.city}}</p>-->
                         <p ng-if="home.keyword!='' && home.doctors.length > 0"><b>'{{home.keyword}}'</b> <span ng-if="home.city!=''"> in {{home.city}}</span></p>
-                        <span ng-if="home.doctors.length > 0">
+                        <span ng-show="home.doctors.length > 0">
                         <p class="showing">Sorting By
                             <select ng-model="sortby">
                                 <option selected value="firstName"> Name</option>
