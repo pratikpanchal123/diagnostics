@@ -45,6 +45,14 @@
             get CATEGORIES(){
                 return '/categories'
             }
+        },
+        users:{
+            get SIGNIN(){
+                return '/users/signin'
+            },
+            get SIGNUP(){
+                return '/users/singup'
+            }
         }
 	});
 })();

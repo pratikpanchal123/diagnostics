@@ -23,5 +23,11 @@ router.post('/validate',function(req, res) {
     })
 });
 
+router.post('/signin',function(req, res) {
+    UsersModel.validateUser(req,function(response){
+        res.json(response);
+    })
+});
+
 
 module.exports = router;

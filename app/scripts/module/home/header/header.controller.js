@@ -3,13 +3,6 @@
 
 	function homeHeaderController ($state) {
 
-		var _this = this;
-
-		function reload(){
-			$state.reload();
-		}
-
-		_this.reload = reload;
 	}
 
 	homeHeaderController.$inject = ['$state'];

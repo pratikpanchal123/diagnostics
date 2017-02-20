@@ -14,8 +14,8 @@
                 },
                 'header@index.home':{
                     templateUrl:'scripts/module/home/header/header.template.html',
-                    controller: 'home.header.controller',
-                    controllerAs:'home'
+                    controller: 'home.login.controller',
+                    controllerAs:'login'
                 },
                 'content@index.home':{
                     templateUrl:'scripts/module/home/content/content.template.html',
@@ -56,7 +56,8 @@
 		'google.places',
 		'ngLoadingOverlay',
 		'rzModule',
-		'app.pLabs.common'
+		'app.pLabs.common',
+		'ngStorage'
     ])
         .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {
