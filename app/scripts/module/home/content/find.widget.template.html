@@ -10,15 +10,15 @@
                         <div class="col-lg-4">
                             <form class="animate-box fadeInUp animated">
                                 <span class="licn"><img src="images/map.png"></span>
-                                <input ng-class="{'invalid':home.isValidLocation==false}" type="text" class="form-control" placeholder="Location" g-places-autocomplete id="location" ng-model="home.location">
+                                <input autocomplete="off" ng-class="{'invalid':home.isValidLocation==false}" type="text" class="form-control" placeholder="Location" g-places-autocomplete id="location" ng-model="home.location">
                             </form>
                         </div>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form class="animate-box fadeInUp animated">
+                                    <form ng-submit="home.search()" class="animate-box fadeInUp animated">
                                         <span class="dicn"><img src="images/ssearch.png"></span>
-                                        <input type="text" class="form-control" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" id="find" name="find" ng-model="home.keyword">
+                                        <input autocomplete="off" type="text" class="form-control" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" id="find" name="find" ng-model="home.keyword">
                                     </form>
                                 </div>
                                 <div  class="col-lg-2">
@@ -42,15 +42,15 @@
                         <div class="col-lg-4">
                             <form class="animate-box fadeInUp animated">
                                 <span class="licn"><img src="images/map.png"></span>
-                                <input ng-class="{'invalid':home.isValidLocation==false}" type="text" class="form-control" placeholder="Location" g-places-autocomplete id="location" ng-model="home.location">
+                                <input autocomplete="off" ng-class="{'invalid':home.isValidLocation==false}" type="text" class="form-control" placeholder="Location" g-places-autocomplete id="location" ng-model="home.location">
                             </form>
                         </div>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form action="#" method="post" class="animate-box fadeInUp animated">
+                                    <form ng-submit="home.search()" class="animate-box fadeInUp animated">
                                         <span class="dicn"><img src="images/ssearch.png"></span>
-                                        <input type="text" class="form-control" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" id="find" name="find" ng-model="home.keyword">
+                                        <input autocomplete="off"type="text" class="form-control" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" id="find" name="find" ng-model="home.keyword">
                                     </form>
                                 </div>
                                 <div  class="col-lg-2">
