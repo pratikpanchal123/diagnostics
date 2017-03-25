@@ -68,6 +68,22 @@
             return serverApi.getData(getDoctorUrl,true);
         }
 
+        // Get doctors list by keyword
+        function getDoctorsByKeyword(keyword) {
+            var getDoctorUrl;
+            apiUrl.doctors.keyword = keyword;
+            getDoctorUrl = constantData.SERVER_ADDRESS + apiUrl.doctors.DOCTORSBYKEYWORD;
+            return serverApi.getData(getDoctorUrl,true);
+        }
+
+        // Get labs list by keyword
+        function getLabsByKeyword(keyword) {
+            var getLabsUrl;
+            apiUrl.labs.keyword = keyword;
+            getLabsUrl = constantData.SERVER_ADDRESS + apiUrl.labs.LABSBYKEYWORD;
+            return serverApi.getData(getLabsUrl,true);
+        }
+
         return {
 			getDoctors:getDoctors,
 			getLabs:getLabs,
@@ -77,6 +93,8 @@
             getLabsByParams:getLabsByParams,
             getDoctorsBySpeciality:getDoctorsBySpeciality,
             getDoctorsById:getDoctorsById,
+            getDoctorsByKeyword:getDoctorsByKeyword,
+            getLabsByKeyword:getLabsByKeyword,
 		};
 
 	}

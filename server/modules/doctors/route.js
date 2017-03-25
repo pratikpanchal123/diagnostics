@@ -95,4 +95,18 @@ router.get("/doctors/:doctorId", function(req, res) {
     });
 });
 
+router.get("/doctors/keyword/:keyword", function(req, res) {
+    var keyword = req.params.keyword;
+    DoctorsModel.findByFields(
+        {
+            $or:[
+                {"firstName":new RegExp(keyword, 'i')},
+                {"lastName":new RegExp(keyword, 'i')},
+                {"speciality":new RegExp(keyword, 'i')}
+            ]
+        },function(response){
+            res.json(response);
+        });
+});
+
 module.exports = router;

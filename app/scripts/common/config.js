@@ -29,7 +29,10 @@
             },
             get DOCTORSBYID(){
                 return '/doctors/'+this.doctorId;
-			}
+			},
+            get DOCTORSBYKEYWORD(){
+                return '/doctors/keyword/'+this.keyword;
+            }
 		},
 		labs:{
             location: null,
@@ -39,6 +42,9 @@
 			},
             get LABSBYPARAMS(){
                 return '/labs/location/'+this.location+'/keyword/'+this.keyword;
+            },
+            get LABSBYKEYWORD(){
+                return '/labs/keyword/'+this.keyword;
             }
 		},
         categories:{

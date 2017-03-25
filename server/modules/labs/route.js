@@ -52,7 +52,17 @@ router.get("/labs/location/:location/keyword/:keyword?", function(req, res) {
         });
 });
 
-
+router.get("/labs/keyword/:keyword?", function(req, res) {
+    var keyword = req.params.keyword;
+    LabsModel.findByFields(
+        {
+            $or:[
+                {"name":new RegExp(keyword, 'i')}
+            ]
+        },function(response){
+            res.json(response);
+        });
+});
 
 
 module.exports = router;

@@ -113,7 +113,26 @@
 				});
 
 			} else {
-				_this.isValidLocation = false;
+                if(_this.keyword!=''){
+                    $loadingOverlay.show(constantData.loading);
+                    contentFactory.getDoctorsByKeyword(_this.keyword).then(function (response) {
+                        _this.doctors = response.data;
+                        $loadingOverlay.hide();
+                    },function (error) {
+                        console.log(error);
+                    });
+
+                    $loadingOverlay.show(constantData.loading);
+                    contentFactory.getLabsByKeyword(_this.keyword).then(function (response) {
+                        _this.labs = response.data;
+                        $loadingOverlay.hide();
+                    },function (error) {
+                        console.log(error);
+                    });
+                } else {
+                    _this.isValidLocation = false;
+                    _this.isValidKeyword = false;
+                }
 			}
 		}
 
