@@ -40,6 +40,44 @@
                     templateUrl:'scripts/module/home/search/detail.template.html'
                 }
             }
+        }).state('index.admin',{
+            url:"/admin",
+            views:{
+                'main@':{
+                    templateUrl: 'scripts/module/admin/admin-home.template.html',
+                    controller: 'admin.content.controller',
+                    controllerAs:'home'
+                },
+                'header@index.admin':{
+                    templateUrl:'scripts/module/admin/header/header.template.html',
+                    controller: 'home.login.controller',
+                    controllerAs:'login'
+                },
+                'content@index.admin':{
+                    templateUrl:'scripts/module/admin/content/content.template.html'
+                },
+                'footer@index.admin':{
+                    templateUrl:'scripts/module/admin/footer/footer.template.html',
+                    controller: 'admin.footer.controller',
+                    controllerAs:'home'
+                },
+                'defaultView@index.admin':{
+                    templateUrl:'scripts/module/admin/content/default.template.html'
+                }
+                /*,
+                'defaultView@index.admin':{
+                    templateUrl:'scripts/module/admin/content/default.template.html'
+                },
+                'searchView@index.admin':{
+                    templateUrl:'scripts/module/admin/search/search.template.html'
+                },
+                'search@index.admin':{
+                    templateUrl:'scripts/module/admin/content/find.widget.template.html'
+                },
+                'detailView@index.admin':{
+                    templateUrl:'scripts/module/admin/search/detail.template.html'
+                }*/
+            }
         });
     }
 
@@ -57,7 +95,10 @@
 		'ngLoadingOverlay',
 		'rzModule',
 		'app.pLabs.common',
-		'ngStorage'
+		'ngStorage',
+        'app.pLabs.content.admin',
+        'app.pLabs.header.admin',
+        'app.pLabs.footer.admin'
     ])
         .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {

@@ -58,7 +58,10 @@
             },
             get SIGNUP(){
                 return '/users/singup'
-            }
+            },
+            get USERS(){
+                return '/users'
+            },
         }
 	});
 })();

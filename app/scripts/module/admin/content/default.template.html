@@ -1,0 +1,149 @@
+<div class="row" ng-if="home.labData">
+    <div class="table table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Rating</th>
+            <th>-</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="lab in home.labData">
+                <td>{{$index+1}}</td>
+                <td ng-bind="lab.name"></td>
+                <td><address>{{lab.address}} {{lab.address2}}</address></td>
+                <td ng-bind="lab.city"></td>
+                <td ng-bind="lab.state"></td>
+                <td ng-bind="lab.country"></td>
+                <td ng-bind="lab.rating"></td>
+                <td>Detail | Deactive</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row" ng-if="home.docData">
+    <div class="table table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Mobile</th>
+            <th>Time</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Rating</th>
+            <th>-</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="doc in home.docData">
+                <td>{{$index+1}}</td>
+                <td>{{doc.firstName}} {{doc.lastName}}</td>
+                <td><address>{{doc.address}} {{doc.address2}}</address></td>
+                <td ng-bind="doc.phone"></td>
+                <td ng-bind="doc.mobile"></td>
+                <td><time>{{doc.from_time}} - {{doc.to_time}}</time></td>
+                <td ng-bind="doc.email"></td>
+                <td ng-bind="doc.city"></td>
+                <td ng-bind="doc.state"></td>
+                <td ng-bind="doc.country"></td>
+                <td ng-bind="doc.rating"></td>
+                <td>Detail | Deactive</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row" ng-if="home.labCategories">
+    <div class="table table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Desc</th>
+            <th>Status</th>
+            <th>Image</th>
+            <th>-</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="labCategory in home.labCategories">
+                <td>{{$index+1}}</td>
+                <td>{{labCategory.name}}</td>
+                <td>{{labCategory.desc}}</td>
+                <td>{{labCategory.status}}</td>
+                <td>{{labCategory.image}}</td>
+                <td>Detail | Deactive</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="row" ng-if="home.docCategories">
+    <div class="table table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Desc</th>
+            <th>Status</th>
+            <th>Image</th>
+            <th>-</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="docCategory in home.docCategories">
+                <td>{{$index+1}}</td>
+                <td>{{docCategory.name}}</td>
+                <td>{{docCategory.desc}}</td>
+                <td>{{docCategory.status}}</td>
+                <td>{{docCategory.image}}</td>
+                <td>Detail | Deactive</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row" ng-if="home.users">
+    <div class="table table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Username</th>
+            <th>Desc</th>
+            <th>Status</th>
+            <th>Image</th>
+            <th>-</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in home.users">
+                <td>{{$index+1}}</td>
+                <td>{{user.firstName}} {{user.lastName}}</td>
+                <td><address>{{user.address1}} {{user.address2}}</address></td>
+                <td>{{user.city}}</td>
+                <td>{{user.state}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.desc}}</td>
+                <td>{{user.status}}</td>
+                <td>{{user.image}}</td>
+                <td>Detail | Deactive</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
