@@ -316,7 +316,7 @@
 
         function uploadFile(userId){
             $loadingOverlay.show(constantData.loading);
-            contentFactory.uploadFile(userId).then(function (response) {
+            contentFactory.uploadFile(_this.reportFile, userId, _this.reportTitle).then(function (response) {
                 loadUsers();
                 $loadingOverlay.hide();
             }, function (error) {
