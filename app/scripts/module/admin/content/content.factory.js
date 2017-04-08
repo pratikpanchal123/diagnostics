@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	// Home factory
-	function homeFactory(serverApi,constantData,apiUrl) {
+	function homeFactory(serverApi,constantData,apiUrl, Upload) {
 
 		// Get doctors list
 		function getDoctors() {
@@ -91,6 +91,14 @@
             return serverApi.getData(getUsersUrl,true);
         }
 
+        function uploadFile(file, userId, reportTitle){
+            var getUsersReportUrl = constantData.SERVER_ADDRESS + apiUrl.users.USERSUPLOAD;
+            return Upload.upload({
+                url: getUsersReportUrl,
+                data: {file: file, 'userId': userId, 'reportTitle':reportTitle}
+            });
+        }
+
         return {
 			getDoctors:getDoctors,
 			getLabs:getLabs,
@@ -103,6 +111,7 @@
             getDoctorsByKeyword:getDoctorsByKeyword,
             getLabsByKeyword:getLabsByKeyword,
             getUsers:getUsers,
+            uploadFile:uploadFile,
 		};
 
 	}
@@ -110,7 +119,7 @@
 	homeFactory.$inject = [
 		'serverApi',
 		'constantData',
-		'apiUrl'];
+		'apiUrl', 'Upload'];
 
 	angular.module('app.pLabs.content.admin').factory('content.factory', homeFactory);
 

@@ -29,5 +29,22 @@ router.post('/users/signin',function(req, res) {
     })
 });
 
+router.post('/users/upload', function(req, res) {
+    if (!req.files){
+        return res.status(400).send('No files were uploaded.');
+    }
+
+    var report = req.files.reportFile;
+
+    console.log(__dirname);
+
+    report.mv('/app/reports/'+report.name, function(err) {
+        if (err) {
+            return res.status(500).send(err);
+        } else {
+            return res.status(200).send('File uploaded!');
+        }
+    });
+});
 
 module.exports = router;

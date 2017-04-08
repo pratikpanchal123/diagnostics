@@ -63,7 +63,10 @@
                 },
                 'defaultView@index.admin':{
                     templateUrl:'scripts/module/admin/content/default.template.html'
-                }
+                },
+                'uploadView@index.admin':{
+                    templateUrl:'scripts/module/admin/content/upload.template.html'
+                },
                 /*,
                 'defaultView@index.admin':{
                     templateUrl:'scripts/module/admin/content/default.template.html'
@@ -98,7 +101,8 @@
 		'ngStorage',
         'app.pLabs.content.admin',
         'app.pLabs.header.admin',
-        'app.pLabs.footer.admin'
+        'app.pLabs.footer.admin',
+        'ngFileUpload'
     ])
         .config(routeProvider)
         .run(['$rootScope', '$location','$window', function ($rootScope, $location,$window) {

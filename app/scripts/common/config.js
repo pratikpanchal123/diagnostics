@@ -62,6 +62,9 @@
             get USERS(){
                 return '/users'
             },
+            get USERSUPLOAD(){
+                return '/users/upload'
+            },
         }
 	});
 })();

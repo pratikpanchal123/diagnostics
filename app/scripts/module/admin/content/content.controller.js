@@ -11,6 +11,8 @@
         _this.doctorsListBeforePriceRange = [];
         _this.dayFilter = undefined;
         _this.toggle = true;
+        _this.defaultView = true;
+        _this.uploadView = false;
 
         function toggleSidebar() {
             _this.toggle = !_this.toggle;
@@ -303,6 +305,22 @@
             _this.labCategories = "";
             _this.docData = "";
             _this.labData = "";
+            _this.defaultView = true;
+            _this.uploadView = false;
+        }
+
+        function uploadFileInterface(){
+            _this.defaultView = false;
+            _this.uploadView = true;
+        }
+
+        function uploadFile(userId){
+            $loadingOverlay.show(constantData.loading);
+            contentFactory.uploadFile(userId).then(function (response) {
+                loadUsers();
+                $loadingOverlay.hide();
+            }, function (error) {
+            });
         }
 
         _this.search = search;
@@ -319,6 +337,8 @@
         _this.loadLabsCategories = loadLabsCategories;
         _this.loadDoctorsCategories = loadDoctorsCategories;
         _this.loadUsers = loadUsers;
+        _this.uploadFileInterface = uploadFileInterface;
+        _this.uploadFile = uploadFile;
     }
 
     adminHomeController.$inject = ['content.factory', '$loadingOverlay', 'constantData', 'localContent.factory', '$scope'];
